@@ -1,0 +1,2407 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Personalizador | SPORTCUSTOM</title>
+
+
+    <!-- Bootstrap -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- Fuentes -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Oswald:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- CSS principal -->
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+
+    <style>
+
+        /* ==================================================
+           PERSONALIZADOR
+        ================================================== */
+
+        .customizer-page {
+
+            min-height: 100vh;
+
+            padding: 55px 0 80px;
+
+            background:
+
+                radial-gradient(
+                    circle at 75% 15%,
+                    rgba(0, 217, 255, 0.08),
+                    transparent 30%
+                );
+
+        }
+
+
+        .customizer-title {
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .customizer-title small {
+
+            color: #a3e635;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+        }
+
+
+        .customizer-title h1 {
+
+            margin: 10px 0;
+
+            color: white;
+
+            font-size: clamp(38px, 5vw, 60px);
+
+            font-weight: 900;
+
+            letter-spacing: -3px;
+
+        }
+
+
+        .customizer-title h1 span {
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #a3e635,
+                    #00d9ff
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+        }
+
+
+        .customizer-title p {
+
+            color: #7593b1;
+
+            font-size: 14px;
+
+        }
+
+
+        /* ==================================================
+           PANEL DE OPCIONES
+        ================================================== */
+
+        .options-panel {
+
+            padding: 25px;
+
+            border: 1px solid #1a3047;
+
+            border-radius: 18px;
+
+            background: #070f1a;
+
+        }
+
+
+        .option-section {
+
+            padding-bottom: 25px;
+
+            margin-bottom: 25px;
+
+            border-bottom: 1px solid #17283b;
+
+        }
+
+
+        .option-section:last-child {
+
+            border-bottom: none;
+
+            margin-bottom: 0;
+
+        }
+
+
+        .option-title {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 16px;
+
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            letter-spacing: .5px;
+
+        }
+
+
+        .option-number {
+
+            color: #55738f;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 9px;
+
+        }
+
+
+        /* DISCIPLINAS */
+
+        .discipline-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 7px;
+
+        }
+
+
+        .discipline-button {
+
+            min-height: 65px;
+
+            border: 1px solid #1b344d;
+
+            border-radius: 10px;
+
+            background: #091522;
+
+            color: #7894af;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            transition: .2s;
+
+        }
+
+
+        .discipline-button span {
+
+            display: block;
+
+            margin-bottom: 5px;
+
+            font-size: 22px;
+
+        }
+
+
+        .discipline-button:hover {
+
+            border-color: #a3e635;
+
+            color: white;
+
+        }
+
+
+        .discipline-button.active {
+
+            border-color: #a3e635;
+
+            background: rgba(163, 230, 53, .08);
+
+            color: #a3e635;
+
+            box-shadow:
+                inset 0 0 20px rgba(163, 230, 53, .03);
+
+        }
+
+
+        /* ==================================================
+           COLORES
+        ================================================== */
+
+        .color-row {
+
+            display: flex;
+
+            gap: 15px;
+
+        }
+
+
+        .color-option {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 7px;
+
+            color: #7593b1;
+
+            font-size: 9px;
+
+            font-family: "JetBrains Mono", monospace;
+
+        }
+
+
+        .color-option input {
+
+            width: 65px;
+
+            height: 45px;
+
+            padding: 3px;
+
+            border: 1px solid #203b54;
+
+            border-radius: 8px;
+
+            background: #07111d;
+
+            cursor: pointer;
+
+        }
+
+
+        /* ==================================================
+           PATRONES
+        ================================================== */
+
+        .pattern-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 7px;
+
+        }
+
+
+        .pattern-button {
+
+            min-height: 65px;
+
+            border: 1px solid #1b344d;
+
+            border-radius: 9px;
+
+            background: #091522;
+
+            color: #7894af;
+
+            font-size: 20px;
+
+            transition: .2s;
+
+        }
+
+
+        .pattern-button small {
+
+            display: block;
+
+            margin-top: 5px;
+
+            font-size: 7px;
+
+            font-family: "JetBrains Mono", monospace;
+
+        }
+
+
+        .pattern-button:hover,
+
+        .pattern-button.active {
+
+            border-color: #a3e635;
+
+            color: #a3e635;
+
+            background: rgba(163, 230, 53, .06);
+
+        }
+
+
+        /* ==================================================
+           ESCUDOS
+        ================================================== */
+
+        .shield-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 7px;
+
+        }
+
+
+        .shield-button {
+
+            min-height: 65px;
+
+            border: 1px solid #1b344d;
+
+            border-radius: 9px;
+
+            background: #091522;
+
+            color: #7894af;
+
+            font-size: 23px;
+
+        }
+
+
+        .shield-button small {
+
+            display: block;
+
+            margin-top: 5px;
+
+            font-size: 7px;
+
+            font-family: "JetBrains Mono", monospace;
+
+        }
+
+
+        .shield-button:hover,
+
+        .shield-button.active {
+
+            border-color: #a3e635;
+
+            color: #a3e635;
+
+            background: rgba(163, 230, 53, .06);
+
+        }
+
+
+        /* ==================================================
+           CAMPOS
+        ================================================== */
+
+        .form-label-custom {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #7894af;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+        }
+
+
+        .custom-input {
+
+            width: 100%;
+
+            height: 45px;
+
+            padding: 0 13px;
+
+            border: 1px solid #1b344d;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            background: #091522;
+
+            color: white;
+
+            font-size: 12px;
+
+        }
+
+
+        .custom-input:focus {
+
+            border-color: #a3e635;
+
+        }
+
+
+        /* ==================================================
+           TIPOGRAFÍA
+        ================================================== */
+
+        .font-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 7px;
+
+        }
+
+
+        .font-button {
+
+            min-height: 50px;
+
+            border: 1px solid #1b344d;
+
+            border-radius: 8px;
+
+            background: #091522;
+
+            color: white;
+
+            font-size: 11px;
+
+        }
+
+
+        .font-button:hover,
+
+        .font-button.active {
+
+            border-color: #a3e635;
+
+            color: #a3e635;
+
+        }
+
+
+        .font-space {
+
+            font-family: "Space Grotesk";
+
+        }
+
+
+        .font-mono {
+
+            font-family: "JetBrains Mono";
+
+        }
+
+
+        .font-inter {
+
+            font-family: "Inter";
+
+        }
+
+
+        .font-oswald {
+
+            font-family: "Oswald";
+
+        }
+
+
+        .font-impact {
+
+            font-family: Impact, sans-serif;
+
+        }
+
+
+        /* ==================================================
+           TEJIDO
+        ================================================== */
+
+        .fabric-select {
+
+            width: 100%;
+
+            height: 46px;
+
+            padding: 0 13px;
+
+            border: 1px solid #1b344d;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            background: #091522;
+
+            color: white;
+
+            font-size: 11px;
+
+        }
+
+
+        /* ==================================================
+           TALLAS
+        ================================================== */
+
+        .size-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(6, 1fr);
+
+            gap: 6px;
+
+        }
+
+
+        .size-button {
+
+            height: 40px;
+
+            border: 1px solid #1b344d;
+
+            border-radius: 7px;
+
+            background: #091522;
+
+            color: #7894af;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+        }
+
+
+        .size-button:hover,
+
+        .size-button.active {
+
+            border-color: #a3e635;
+
+            background: rgba(163, 230, 53, .08);
+
+            color: #a3e635;
+
+        }
+
+
+        /* ==================================================
+           VISTA PREVIA
+        ================================================== */
+
+        .preview-panel {
+
+            position: sticky;
+
+            top: 120px;
+
+            min-height: 650px;
+
+            padding: 30px;
+
+            border: 1px solid #1a3047;
+
+            border-radius: 20px;
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    #102a35,
+                    #050b13 65%
+                );
+
+            overflow: hidden;
+
+        }
+
+
+        .preview-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .preview-header span {
+
+            color: #a3e635;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+        }
+
+
+        .preview-status {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color: #5e7e9d;
+
+            font-size: 9px;
+
+        }
+
+
+        .status-dot {
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #a3e635;
+
+            box-shadow:
+                0 0 10px #a3e635;
+
+        }
+
+
+        /* UNIFORME */
+
+        .uniform-preview {
+
+            position: relative;
+
+            height: 430px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .uniform-shape {
+
+            position: relative;
+
+            width: 280px;
+
+            height: 350px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #a3e635;
+
+            clip-path: polygon(
+
+                17% 0,
+
+                40% 0,
+
+                50% 8%,
+
+                60% 0,
+
+                83% 0,
+
+                100% 19%,
+
+                87% 45%,
+
+                82% 100%,
+
+                18% 100%,
+
+                13% 45%,
+
+                0 19%
+
+            );
+
+            overflow: hidden;
+
+            transition: .3s;
+
+        }
+
+
+        /* PATRONES */
+
+        .pattern-solid {
+
+            background: var(--uniform-primary);
+
+        }
+
+
+        .pattern-stripes {
+
+            background:
+
+                repeating-linear-gradient(
+
+                    90deg,
+
+                    var(--uniform-primary) 0,
+
+                    var(--uniform-primary) 25px,
+
+                    var(--uniform-secondary) 25px,
+
+                    var(--uniform-secondary) 45px
+
+                );
+
+        }
+
+
+        .pattern-diagonal {
+
+            background:
+
+                repeating-linear-gradient(
+
+                    135deg,
+
+                    var(--uniform-primary) 0,
+
+                    var(--uniform-primary) 28px,
+
+                    var(--uniform-secondary) 28px,
+
+                    var(--uniform-secondary) 45px
+
+                );
+
+        }
+
+
+        .pattern-checkers {
+
+            background:
+
+                conic-gradient(
+
+                    var(--uniform-secondary) 25%,
+
+                    var(--uniform-primary) 0 50%,
+
+                    var(--uniform-secondary) 0 75%,
+
+                    var(--uniform-primary) 0
+
+                );
+
+            background-size: 55px 55px;
+
+        }
+
+
+        .pattern-waves {
+
+            background:
+
+                radial-gradient(
+
+                    ellipse at center,
+
+                    var(--uniform-secondary) 0 25%,
+
+                    transparent 27%
+
+                ),
+
+                var(--uniform-primary);
+
+            background-size: 55px 35px;
+
+        }
+
+
+        /* ESCUDO */
+
+        .preview-shield {
+
+            position: absolute;
+
+            top: 80px;
+
+            color: white;
+
+            font-size: 40px;
+
+            text-shadow:
+                0 3px 8px rgba(0,0,0,.35);
+
+        }
+
+
+        /* NOMBRE */
+
+        .preview-name {
+
+            position: absolute;
+
+            top: 145px;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            text-shadow:
+                0 2px 4px rgba(0,0,0,.4);
+
+        }
+
+
+        /* NÚMERO */
+
+        .preview-number {
+
+            position: absolute;
+
+            top: 175px;
+
+            color: white;
+
+            font-size: 110px;
+
+            font-weight: 900;
+
+            line-height: 1;
+
+            text-shadow:
+                5px 5px 0 rgba(0,0,0,.18);
+
+        }
+
+
+        /* INFO PREVIEW */
+
+        .preview-info {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 8px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #193047;
+
+        }
+
+
+        .preview-info div {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 4px;
+
+        }
+
+
+        .preview-info small {
+
+            color: #53728f;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 8px;
+
+        }
+
+
+        .preview-info strong {
+
+            color: white;
+
+            font-size: 10px;
+
+        }
+
+
+        /* BOTÓN CARRITO */
+
+        .add-cart-button {
+
+            width: 100%;
+
+            height: 54px;
+
+            margin-top: 20px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background:
+
+                linear-gradient(
+                    100deg,
+                    #a3e635,
+                    #00c68c
+                );
+
+            color: #06100b;
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 991px) {
+
+            .preview-panel {
+
+                position: relative;
+
+                top: auto;
+
+                margin-top: 35px;
+
+            }
+
+        }
+
+
+        @media (max-width: 576px) {
+
+            .discipline-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+            .pattern-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+            }
+
+            .shield-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+            }
+
+            .font-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+            .size-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+            }
+
+            .uniform-shape {
+
+                width: 220px;
+
+                height: 290px;
+
+            }
+
+            .preview-number {
+
+                font-size: 85px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     NAVBAR
+================================================== -->
+
+<header class="main-header">
+
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container">
+
+
+            <a
+                href="../index.html"
+                class="brand">
+
+                <div class="brand-symbol">
+                    S
+                </div>
+
+                <div class="brand-text">
+
+                    <strong>
+                        SPORT<span>CUSTOM</span>
+                    </strong>
+
+                    <small>
+                        REMARKABLE UNIFORMS
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal">
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+            <div
+                class="collapse navbar-collapse"
+                id="menuPrincipal">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../index.html">
+
+                            INICIO
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../productos/index.html">
+
+                            COLECCIÓN / MAYORISTA
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link active"
+                            href="index.html">
+
+                            PERSONALIZAR
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../index.html#contacto">
+
+                            CONTACTO
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+
+                <div class="header-actions">
+
+                    <a
+                        href="../carrito/index.html"
+                        class="header-icon cart-link">
+
+                        <i class="bi bi-bag"></i>
+
+                        <span id="cart-count">
+                            0
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- ==================================================
+     PERSONALIZADOR
+================================================== -->
+
+<main>
+
+<section class="customizer-page">
+
+    <div class="container">
+
+
+        <!-- TÍTULO -->
+
+        <div class="customizer-title">
+
+            <small>
+                REMARKABLE CUSTOMIZER
+            </small>
+
+            <h1>
+                CREA TU
+                <span>UNIFORME.</span>
+            </h1>
+
+            <p>
+                Personaliza cada detalle de tu uniforme.
+                Los cambios aparecerán automáticamente en la vista previa.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- ==================================================
+                 OPCIONES
+            ================================================== -->
+
+            <div class="col-lg-7">
+
+                <div class="options-panel">
+
+
+                    <!-- DISCIPLINA -->
+
+                    <div class="option-section">
+
+                        <div class="option-title">
+
+                            <span>
+                                SELECCIONA DISCIPLINA
+                            </span>
+
+                            <span class="option-number">
+                                01
+                            </span>
+
+                        </div>
+
+
+                        <div class="discipline-grid">
+
+
+                            <button
+                                class="discipline-button active"
+                                data-discipline="Soccer">
+
+                                <span>⚽</span>
+
+                                SOCCER
+
+                            </button>
+
+
+                            <button
+                                class="discipline-button"
+                                data-discipline="Basketball">
+
+                                <span>🏀</span>
+
+                                BASKETBALL
+
+                            </button>
+
+
+                            <button
+                                class="discipline-button"
+                                data-discipline="Baseball">
+
+                                <span>⚾</span>
+
+                                BASEBALL
+
+                            </button>
+
+
+                            <button
+                                class="discipline-button"
+                                data-discipline="Football">
+
+                                <span>🏈</span>
+
+                                FOOTBALL
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- COLORES -->
+
+                    <div class="option-section">
+
+                        <div class="option-title">
+
+                            <span>
+                                GAMA CROMÁTICA
+                            </span>
+
+                            <span class="option-number">
+                                02
+                            </span>
+
+                        </div>
+
+
+                        <div class="color-row">
+
+
+                            <label class="color-option">
+
+                                COLOR PRINCIPAL
+
+                                <input
+                                    type="color"
+                                    id="primaryColor"
+                                    value="#a3e635">
+
+                            </label>
+
+
+                            <label class="color-option">
+
+                                COLOR SECUNDARIO
+
+                                <input
+                                    type="color"
+                                    id="secondaryColor"
+                                    value="#0f172a">
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PATRÓN -->
+
+                    <div class="option-section">
+
+                        <div class="option-title">
+
+                            <span>
+                                PATRÓN GRÁFICO
+                            </span>
+
+                            <span class="option-number">
+                                03
+                            </span>
+
+                        </div>
+
+
+                        <div class="pattern-grid">
+
+
+                            <button
+                                class="pattern-button active"
+                                data-pattern="solid">
+
+                                ■
+
+                                <small>
+                                    SOLID
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="pattern-button"
+                                data-pattern="stripes">
+
+                                ⦾
+
+                                <small>
+                                    STRIPES
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="pattern-button"
+                                data-pattern="diagonal">
+
+                                ▰
+
+                                <small>
+                                    DIAGONAL
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="pattern-button"
+                                data-pattern="checkers">
+
+                                ⚃
+
+                                <small>
+                                    CHECKERS
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="pattern-button"
+                                data-pattern="waves">
+
+                                ⌇
+
+                                <small>
+                                    WAVES
+                                </small>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ESCUDO -->
+
+                    <div class="option-section">
+
+                        <div class="option-title">
+
+                            <span>
+                                ESCUDO / LOGO DEL CLUB
+                            </span>
+
+                            <span class="option-number">
+                                04
+                            </span>
+
+                        </div>
+
+
+                        <div class="shield-grid">
+
+
+                            <button
+                                class="shield-button active"
+                                data-shield="★">
+
+                                ★
+
+                                <small>
+                                    STAR
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="shield-button"
+                                data-shield="🦅">
+
+                                🦅
+
+                                <small>
+                                    EAGLE
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="shield-button"
+                                data-shield="🐂">
+
+                                🐂
+
+                                <small>
+                                    BULL
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="shield-button"
+                                data-shield="🦁">
+
+                                🦁
+
+                                <small>
+                                    LION
+                                </small>
+
+                            </button>
+
+
+                            <button
+                                class="shield-button"
+                                data-shield="">
+
+                                ✕
+
+                                <small>
+                                    NONE
+                                </small>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- NOMBRE Y NÚMERO -->
+
+                    <div class="option-section">
+
+                        <div class="option-title">
+
+                            <span>
+                                ROTULACIÓN Y NÚMERO
+                            </span>
+
+                            <span class="option-number">
+                                05
+                            </span>
+
+                        </div>
+
+
+                        <div class="row g-3">
+
+
+                            <div class="col-md-7">
+
+                                <label
+                                    class="form-label-custom">
+
+                                    TEXTO POSTERIOR / APELLIDO
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="playerName"
+                                    class="custom-input"
+                                    placeholder="EJ. ESPINOZA"
+                                    maxlength="15">
+
+                            </div>
+
+
+                            <div class="col-md-5">
+
+                                <label
+                                    class="form-label-custom">
+
+                                    NÚMERO DORSAL
+
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="playerNumber"
+                                    class="custom-input"
+                                    value="10"
+                                    min="0"
+                                    max="99">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TIPOGRAFÍA -->
+
+                    <div class="option-section">
+
+                        <div class="option-title">
+
+                            <span>
+                                TIPOGRAFÍA
+                            </span>
+
+                            <span class="option-number">
+                                06
+                            </span>
+
+                        </div>
+
+
+                        <div class="font-grid">
+
+
+                            <button
+                                class="font-button font-space active"
+                                data-font="Space Grotesk">
+
+                                Space Grotesk
+
+                            </button>
+
+
+                            <button
+                                class="font-button font-mono"
+                                data-font="JetBrains Mono">
+
+                                JetBrains Mono
+
+                            </button>
+
+
+                            <button
+                                class="font-button font-inter"
+                                data-font="Inter">
+
+                                Inter
+
+                            </button>
+
+
+                            <button
+                                class="font-button font-oswald"
+                                data-font="Oswald">
+
+                                Oswald
+
+                            </button>
+
+
+                            <button
+                                class="font-button font-impact"
+                                data-font="Impact">
+
+                                Impact
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TEJIDO -->
+
+                    <div class="option-section">
+
+                        <div class="option-title">
+
+                            <span>
+                                TEJIDO TÉCNICO
+                            </span>
+
+                            <span class="option-number">
+                                07
+                            </span>
+
+                        </div>
+
+
+                        <select
+                            id="fabricSelect"
+                            class="fabric-select">
+
+                            <option>
+                                Pro-Dri Breathable
+                            </option>
+
+                            <option>
+                                UltraMesh Premium
+                            </option>
+
+                            <option>
+                                AeroKnit Light
+                            </option>
+
+                            <option>
+                                Eco-Spandex
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- TALLA -->
+
+                    <div class="option-section">
+
+                        <div class="option-title">
+
+                            <span>
+                                TALLA PREFERENTE
+                            </span>
+
+                            <span class="option-number">
+                                08
+                            </span>
+
+                        </div>
+
+
+                        <div class="size-grid">
+
+
+                            <button
+                                class="size-button"
+                                data-size="XS">
+
+                                XS
+
+                            </button>
+
+
+                            <button
+                                class="size-button active"
+                                data-size="S">
+
+                                S
+
+                            </button>
+
+
+                            <button
+                                class="size-button"
+                                data-size="M">
+
+                                M
+
+                            </button>
+
+
+                            <button
+                                class="size-button"
+                                data-size="L">
+
+                                L
+
+                            </button>
+
+
+                            <button
+                                class="size-button"
+                                data-size="XL">
+
+                                XL
+
+                            </button>
+
+
+                            <button
+                                class="size-button"
+                                data-size="XXL">
+
+                                XXL
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 VISTA PREVIA
+            ================================================== -->
+
+            <div class="col-lg-5">
+
+                <div class="preview-panel">
+
+
+                    <div class="preview-header">
+
+                        <span>
+                            VISTA PREVIA
+                        </span>
+
+                        <div class="preview-status">
+
+                            <span class="status-dot"></span>
+
+                            EN VIVO
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="uniform-preview">
+
+                        <div
+                            class="uniform-shape pattern-solid"
+                            id="uniformPreview"
+                            style="
+                                --uniform-primary:#a3e635;
+                                --uniform-secondary:#0f172a;
+                            ">
+
+
+                            <div
+                                class="preview-shield"
+                                id="previewShield">
+
+                                ★
+
+                            </div>
+
+
+                            <div
+                                class="preview-name"
+                                id="previewName">
+
+                                SPORT
+
+                            </div>
+
+
+                            <div
+                                class="preview-number"
+                                id="previewNumber">
+
+                                10
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="preview-info">
+
+
+                        <div>
+
+                            <small>
+                                DISCIPLINA
+                            </small>
+
+                            <strong id="previewDiscipline">
+                                SOCCER
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <small>
+                                TEJIDO
+                            </small>
+
+                            <strong id="previewFabric">
+                                PRO-DRI
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <small>
+                                TALLA
+                            </small>
+
+                            <strong id="previewSize">
+                                S
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="add-cart-button"
+                        id="addToCart">
+
+                        <i class="bi bi-bag-plus"></i>
+
+                        AGREGAR DISEÑO AL CARRITO
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<script src="../js/main.js"></script>
+
+
+<script>
+
+/* ==================================================
+   VARIABLES
+================================================== */
+
+const uniform =
+    document.getElementById("uniformPreview");
+
+const primaryColor =
+    document.getElementById("primaryColor");
+
+const secondaryColor =
+    document.getElementById("secondaryColor");
+
+const previewName =
+    document.getElementById("previewName");
+
+const previewNumber =
+    document.getElementById("previewNumber");
+
+const previewShield =
+    document.getElementById("previewShield");
+
+const previewDiscipline =
+    document.getElementById("previewDiscipline");
+
+const previewFabric =
+    document.getElementById("previewFabric");
+
+const previewSize =
+    document.getElementById("previewSize");
+
+
+/* ==================================================
+   COLORES
+================================================== */
+
+function actualizarColores() {
+
+    uniform.style.setProperty(
+        "--uniform-primary",
+        primaryColor.value
+    );
+
+    uniform.style.setProperty(
+        "--uniform-secondary",
+        secondaryColor.value
+    );
+
+}
+
+
+primaryColor.addEventListener(
+    "input",
+    actualizarColores
+);
+
+
+secondaryColor.addEventListener(
+    "input",
+    actualizarColores
+);
+
+
+/* ==================================================
+   PATRONES
+================================================== */
+
+document
+    .querySelectorAll(".pattern-button")
+    .forEach(function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                document
+                    .querySelectorAll(".pattern-button")
+                    .forEach(function (item) {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                this.classList.add("active");
+
+
+                uniform.className =
+                    "uniform-shape pattern-" +
+                    this.dataset.pattern;
+
+            }
+        );
+
+    });
+
+
+/* ==================================================
+   ESCUDOS
+================================================== */
+
+document
+    .querySelectorAll(".shield-button")
+    .forEach(function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                document
+                    .querySelectorAll(".shield-button")
+                    .forEach(function (item) {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                this.classList.add("active");
+
+
+                previewShield.textContent =
+                    this.dataset.shield;
+
+            }
+        );
+
+    });
+
+
+/* ==================================================
+   DISCIPLINA
+================================================== */
+
+document
+    .querySelectorAll(".discipline-button")
+    .forEach(function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                document
+                    .querySelectorAll(
+                        ".discipline-button"
+                    )
+                    .forEach(function (item) {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                this.classList.add("active");
+
+
+                previewDiscipline.textContent =
+                    this.dataset.discipline
+                    .toUpperCase();
+
+            }
+        );
+
+    });
+
+
+/* ==================================================
+   NOMBRE
+================================================== */
+
+document
+    .getElementById("playerName")
+    .addEventListener(
+        "input",
+        function () {
+
+            previewName.textContent =
+                this.value.trim() ||
+                "SPORT";
+
+        }
+    );
+
+
+/* ==================================================
+   NÚMERO
+================================================== */
+
+document
+    .getElementById("playerNumber")
+    .addEventListener(
+        "input",
+        function () {
+
+            previewNumber.textContent =
+                this.value || "0";
+
+        }
+    );
+
+
+/* ==================================================
+   TIPOGRAFÍA
+================================================== */
+
+document
+    .querySelectorAll(".font-button")
+    .forEach(function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                document
+                    .querySelectorAll(".font-button")
+                    .forEach(function (item) {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                this.classList.add("active");
+
+
+                const fuente =
+                    this.dataset.font;
+
+                previewName.style.fontFamily =
+                    fuente;
+
+                previewNumber.style.fontFamily =
+                    fuente;
+
+            }
+        );
+
+    });
+
+
+/* ==================================================
+   TALLAS
+================================================== */
+
+document
+    .querySelectorAll(".size-button")
+    .forEach(function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                document
+                    .querySelectorAll(".size-button")
+                    .forEach(function (item) {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                this.classList.add("active");
+
+
+                previewSize.textContent =
+                    this.dataset.size;
+
+            }
+        );
+
+    });
+
+
+/* ==================================================
+   TEJIDO
+================================================== */
+
+document
+    .getElementById("fabricSelect")
+    .addEventListener(
+        "change",
+        function () {
+
+            previewFabric.textContent =
+                this.value
+                    .split(" ")[0]
+                    .toUpperCase();
+
+        }
+    );
+
+
+/* ==================================================
+   AGREGAR AL CARRITO
+================================================== */
+
+document
+    .getElementById("addToCart")
+    .addEventListener(
+        "click",
+        function () {
+
+
+            const disciplina =
+                previewDiscipline.textContent;
+
+            const nombre =
+                previewName.textContent;
+
+            const numero =
+                previewNumber.textContent;
+
+            const talla =
+                previewSize.textContent;
+
+            const tejido =
+                document
+                    .getElementById("fabricSelect")
+                    .value;
+
+
+            const diseño = {
+
+                id: Date.now(),
+
+                disciplina: disciplina,
+
+                nombre: nombre,
+
+                numero: numero,
+
+                talla: talla,
+
+                tejido: tejido,
+
+                colorPrincipal:
+                    primaryColor.value,
+
+                colorSecundario:
+                    secondaryColor.value,
+
+                patron:
+                    document
+                        .querySelector(
+                            ".pattern-button.active"
+                        )
+                        .dataset.pattern,
+
+                escudo:
+                    previewShield.textContent,
+
+                cantidad: 1
+
+            };
+
+
+            let carrito =
+                JSON.parse(
+                    localStorage.getItem(
+                        "sportcustom_carrito"
+                    )
+                ) || [];
+
+
+            carrito.push(diseño);
+
+
+            localStorage.setItem(
+                "sportcustom_carrito",
+                JSON.stringify(carrito)
+            );
+
+
+            const contador =
+                document.getElementById(
+                    "cart-count"
+                );
+
+
+            contador.textContent =
+                carrito.reduce(
+                    function (total, producto) {
+
+                        return total +
+                            (producto.cantidad || 0);
+
+                    },
+                    0
+                );
+
+
+            alert(
+                "¡Tu diseño fue agregado al carrito!"
+            );
+
+        }
+    );
+
+
+/* ==================================================
+   INICIALIZAR COLORES
+================================================== */
+
+actualizarColores();
+
+</script>
+
+
+</body>
+</html>

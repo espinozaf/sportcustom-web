@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Carrito | SPORTCUSTOM</title>
+
+
+    <!-- Bootstrap -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- Fuentes -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- CSS principal -->
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+
+    <style>
+
+       
+
+        .cart-page {
+
+            min-height: 100vh;
+
+            padding: 65px 0 100px;
+
+            background:
+                radial-gradient(
+                    circle at 80% 10%,
+                    rgba(0, 217, 255, .07),
+                    transparent 30%
+                );
+
+        }
+
+
+        .cart-header {
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .cart-header small {
+
+            color: #a3e635;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+        }
+
+
+        .cart-header h1 {
+
+            margin: 10px 0;
+
+            color: white;
+
+            font-size: clamp(40px, 5vw, 62px);
+
+            font-weight: 900;
+
+            letter-spacing: -3px;
+
+        }
+
+
+        .cart-header h1 span {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #a3e635,
+                    #00d9ff
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+        }
+
+
+        .cart-header p {
+
+            color: #718daa;
+
+            font-size: 14px;
+
+        }
+
+
+
+        .cart-box {
+
+            padding: 25px;
+
+            border: 1px solid #1a3047;
+
+            border-radius: 18px;
+
+            background: #070f1a;
+
+        }
+
+
+        .cart-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 20px 0;
+
+            border-bottom: 1px solid #17283b;
+
+        }
+
+
+        .cart-item:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .cart-preview {
+
+            width: 110px;
+
+            height: 120px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border: 1px solid #193047;
+
+            border-radius: 12px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #143238,
+                    #07111c
+                );
+
+        }
+
+
+        .cart-mini-uniform {
+
+            width: 65px;
+
+            height: 85px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: var(--uniform-color, #a3e635);
+
+            clip-path: polygon(
+                18% 0,
+                40% 0,
+                50% 8%,
+                60% 0,
+                82% 0,
+                100% 18%,
+                87% 45%,
+                82% 100%,
+                18% 100%,
+                13% 45%,
+                0 18%
+            );
+
+            color: white;
+
+            font-size: 25px;
+
+            font-weight: 900;
+
+        }
+
+
+        .cart-details {
+
+            flex: 1;
+
+        }
+
+
+        .cart-details small {
+
+            color: #00d9ff;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+        }
+
+
+        .cart-details h2 {
+
+            margin: 5px 0 8px;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: 900;
+
+        }
+
+
+        .cart-details p {
+
+            margin: 3px 0;
+
+            color: #6986a3;
+
+            font-size: 10px;
+
+        }
+
+
+        .cart-price {
+
+            color: #a3e635;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 16px;
+
+            font-weight: 800;
+
+        }
+
+
+        .delete-button {
+
+            width: 38px;
+
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: 1px solid #28374a;
+
+            border-radius: 8px;
+
+            background: transparent;
+
+            color: #698099;
+
+            transition: .2s;
+
+        }
+
+
+        .delete-button:hover {
+
+            border-color: #ef4444;
+
+            color: #ef4444;
+
+        }
+
+
+
+        .empty-cart {
+
+            padding: 80px 20px;
+
+            text-align: center;
+
+        }
+
+
+        .empty-cart i {
+
+            display: block;
+
+            margin-bottom: 20px;
+
+            color: #29435c;
+
+            font-size: 55px;
+
+        }
+
+
+        .empty-cart h2 {
+
+            margin-bottom: 10px;
+
+            color: white;
+
+            font-size: 25px;
+
+            font-weight: 900;
+
+        }
+
+
+        .empty-cart p {
+
+            margin-bottom: 25px;
+
+            color: #6d8aa6;
+
+            font-size: 12px;
+
+        }
+
+
+
+        .summary-box {
+
+            position: sticky;
+
+            top: 120px;
+
+            padding: 25px;
+
+            border: 1px solid #1a3047;
+
+            border-radius: 18px;
+
+            background: #070f1a;
+
+        }
+
+
+        .summary-box h2 {
+
+            margin-bottom: 25px;
+
+            color: white;
+
+            font-size: 18px;
+
+            font-weight: 900;
+
+        }
+
+
+        .summary-line {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 13px;
+
+            color: #718daa;
+
+            font-size: 11px;
+
+        }
+
+
+        .summary-line strong {
+
+            color: white;
+
+        }
+
+
+        .summary-total {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #17283b;
+
+        }
+
+
+        .summary-total span {
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+        }
+
+
+        .summary-total strong {
+
+            color: #a3e635;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 22px;
+
+        }
+
+
+        .checkout-button {
+
+            width: 100%;
+
+            height: 55px;
+
+            margin-top: 25px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    100deg,
+                    #a3e635,
+                    #00c68c
+                );
+
+            color: #06100b;
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+        }
+
+
+        .continue-button {
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin-top: 12px;
+
+            padding: 12px;
+
+            border: 1px solid #1a344b;
+
+            border-radius: 9px;
+
+            color: #7592ae;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+        }
+
+
+        .continue-button:hover {
+
+            color: white;
+
+            border-color: #a3e635;
+
+        }
+
+
+        @media (max-width: 767px) {
+
+            .cart-item {
+
+                align-items: flex-start;
+
+            }
+
+            .cart-preview {
+
+                width: 80px;
+
+                height: 95px;
+
+            }
+
+            .cart-mini-uniform {
+
+                width: 50px;
+
+                height: 68px;
+
+            }
+
+            .cart-price {
+
+                font-size: 13px;
+
+            }
+
+            .summary-box {
+
+                position: relative;
+
+                top: auto;
+
+                margin-top: 25px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+<header class="main-header">
+
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container">
+
+
+            <a
+                href="../index.html"
+                class="brand">
+
+                <div class="brand-symbol">
+                    S
+                </div>
+
+                <div class="brand-text">
+
+                    <strong>
+                        SPORT<span>CUSTOM</span>
+                    </strong>
+
+                    <small>
+                        REMARKABLE UNIFORMS
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal">
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+            <div
+                class="collapse navbar-collapse"
+                id="menuPrincipal">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../index.html">
+
+                            INICIO
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../productos/index.html">
+
+                            COLECCIÓN / MAYORISTA
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../personalizador/index.html">
+
+                            PERSONALIZAR
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../index.html#contacto">
+
+                            CONTACTO
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+
+                <div class="header-actions">
+
+                    <a
+                        href="index.html"
+                        class="header-icon cart-link">
+
+                        <i class="bi bi-bag"></i>
+
+                        <span id="cart-count">
+                            0
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+
+<main>
+
+<section class="cart-page">
+
+    <div class="container">
+
+
+        <!-- CABECERA -->
+
+        <div class="cart-header">
+
+            <small>
+                REMARKABLE CART
+            </small>
+
+            <h1>
+                TU
+                <span>CARRITO.</span>
+            </h1>
+
+            <p>
+                Revisa tus diseños antes de continuar con tu pedido.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- PRODUCTOS -->
+
+            <div class="col-lg-8">
+
+                <div class="cart-box">
+
+                    <div id="cartContainer">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESUMEN -->
+
+            <div class="col-lg-4">
+
+                <div class="summary-box">
+
+                    <h2>
+                        RESUMEN DEL PEDIDO
+                    </h2>
+
+
+                    <div class="summary-line">
+
+                        <span>
+                            Productos
+                        </span>
+
+                        <strong id="summaryItems">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-line">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="summarySubtotal">
+                            $0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-line">
+
+                        <span>
+                            Envío
+                        </span>
+
+                        <strong>
+                            GRATIS
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-total">
+
+                        <span>
+                            TOTAL
+                        </span>
+
+                        <strong id="summaryTotal">
+                            $0.00
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="checkout-button"
+                        id="checkoutButton">
+
+                        CONTINUAR AL PAGO
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </button>
+
+
+                    <a
+                        href="../productos/index.html"
+                        class="continue-button">
+
+                        <i class="bi bi-arrow-left"></i>
+
+                        &nbsp; SEGUIR COMPRANDO
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+
+<footer class="main-footer">
+
+    <div class="container">
+
+        <div class="row g-5">
+
+
+            <div class="col-lg-4">
+
+                <div class="footer-brand">
+
+                    <div class="brand-symbol">
+                        S
+                    </div>
+
+                    <div class="brand-text">
+
+                        <strong>
+                            SPORT<span>CUSTOM</span>
+                        </strong>
+
+                        <small>
+                            REMARKABLE UNIFORMS
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <p class="footer-description">
+
+                    Diseñamos indumentaria deportiva extraordinaria
+                    para equipos que exigen destacar.
+
+                </p>
+
+
+                <div class="social-links">
+
+                    <a href="#">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4 col-lg-2">
+
+                <h4>
+                    MENÚ
+                </h4>
+
+                <div class="footer-links">
+
+                    <a href="../index.html">
+                        › Inicio
+                    </a>
+
+                    <a href="../productos/index.html">
+                        › Catálogo
+                    </a>
+
+                    <a href="../personalizador/index.html">
+                        › Diseñador
+                    </a>
+
+                    <a href="../index.html#contacto">
+                        › Contacto
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4 col-lg-2">
+
+                <h4>
+                    SOPORTE
+                </h4>
+
+                <div class="footer-links">
+
+                    <a href="#">
+                        › Centro de Ayuda
+                    </a>
+
+                    <a href="#">
+                        › Guía de Tallas
+                    </a>
+
+                    <a href="#">
+                        › Envíos
+                    </a>
+
+                    <a href="#">
+                        › Preguntas Frecuentes
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4 col-lg-4">
+
+                <h4>
+                    BOLETÍN REMARKABLE
+                </h4>
+
+                <p class="newsletter-text">
+
+                    Recibe novedades y nuevos diseños.
+
+                </p>
+
+                <form class="newsletter-form">
+
+                    <input
+                        type="email"
+                        placeholder="Ingresa tu correo"
+                        required>
+
+                    <button type="submit">
+                        ENVIAR
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 SPORTCUSTOM Corporation.
+            </span>
+
+            <div>
+
+                <a href="#">
+                    Términos
+                </a>
+
+                <a href="#">
+                    Privacidad
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        cargarCarrito();
+
+    }
+);
+
+
+function obtenerCarrito() {
+
+    return JSON.parse(
+        localStorage.getItem(
+            "sportcustom_carrito"
+        )
+    ) || [];
+
+}
+
+
+function guardarCarrito(carrito) {
+
+    localStorage.setItem(
+        "sportcustom_carrito",
+        JSON.stringify(carrito)
+    );
+
+}
+
+
+function cargarCarrito() {
+
+    const carrito =
+        obtenerCarrito();
+
+    const container =
+        document.getElementById(
+            "cartContainer"
+        );
+
+
+    document.getElementById(
+        "cart-count"
+    ).textContent =
+        carrito.reduce(
+            function (total, producto) {
+
+                return total +
+                    (producto.cantidad || 0);
+
+            },
+            0
+        );
+
+
+    if (carrito.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="empty-cart">
+
+                <i class="bi bi-bag-x"></i>
+
+                <h2>
+                    TU CARRITO ESTÁ VACÍO
+                </h2>
+
+                <p>
+                    Todavía no tienes diseños agregados.
+                </p>
+
+                <a
+                    href="../personalizador/index.html"
+                    class="primary-button">
+
+                    CREAR MI UNIFORME
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        `;
+
+        actualizarResumen();
+
+        return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    carrito.forEach(
+        function (producto, index) {
+
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "cart-item";
+
+
+            item.innerHTML = `
+
+                <div
+                    class="cart-preview">
+
+                    <div
+                        class="cart-mini-uniform"
+                        style="
+                            --uniform-color:
+                            ${producto.colorPrincipal || "#a3e635"};
+                        ">
+
+                        ${producto.numero || "10"}
+
+                    </div>
+
+                </div>
+
+
+                <div class="cart-details">
+
+                    <small>
+                        ${producto.disciplina || "SOCCER"}
+                    </small>
+
+                    <h2>
+                        UNIFORME PERSONALIZADO
+                    </h2>
+
+                    <p>
+                        Jugador:
+                        ${producto.nombre || "SPORT"}
+                    </p>
+
+                    <p>
+                        Talla:
+                        ${producto.talla || "S"}
+                        ·
+                        Tejido:
+                        ${producto.tejido || "Pro-Dri"}
+                    </p>
+
+                    <p>
+                        Color:
+                        ${producto.colorPrincipal || "#a3e635"}
+                    </p>
+
+                </div>
+
+
+                <div class="cart-price">
+                    $49.99
+                </div>
+
+
+                <button
+                    class="delete-button"
+                    onclick="eliminarProducto(${index})">
+
+                    <i class="bi bi-trash"></i>
+
+                </button>
+
+            `;
+
+
+            container.appendChild(item);
+
+        }
+    );
+
+
+    actualizarResumen();
+
+}
+
+
+function eliminarProducto(index) {
+
+    const carrito =
+        obtenerCarrito();
+
+
+    carrito.splice(index, 1);
+
+
+    guardarCarrito(carrito);
+
+
+    cargarCarrito();
+
+}
+
+
+function actualizarResumen() {
+
+    const carrito =
+        obtenerCarrito();
+
+
+    const cantidad =
+        carrito.reduce(
+            function (total, producto) {
+
+                return total +
+                    (producto.cantidad || 0);
+
+            },
+            0
+        );
+
+
+    /*
+        Por ahora utilizamos un precio
+        provisional de $49.99.
+
+        Más adelante este precio
+        vendrá desde MySQL.
+    */
+
+    const subtotal =
+        cantidad * 49.99;
+
+
+    document.getElementById(
+        "summaryItems"
+    ).textContent =
+        cantidad;
+
+
+    document.getElementById(
+        "summarySubtotal"
+    ).textContent =
+        "$" + subtotal.toFixed(2);
+
+
+    document.getElementById(
+        "summaryTotal"
+    ).textContent =
+        "$" + subtotal.toFixed(2);
+
+}
+
+
+
+document
+    .getElementById("checkoutButton")
+    .addEventListener(
+        "click",
+        function () {
+
+            const carrito =
+                obtenerCarrito();
+
+
+            if (carrito.length === 0) {
+
+                alert(
+                    "Tu carrito está vacío."
+                );
+
+                return;
+
+            }
+
+
+        
+
+            window.location.href = "../checkout/index.html";
+
+        }
+    );
+
+</script>
+
+
+</body>
+</html>

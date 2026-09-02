@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SPORTCUSTOM | Contacto</title>
+
+
+    
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+   
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+  
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+
+    
+
+    <link rel="stylesheet" href="../css/style.css">
+
+
+   
+
+    <style>
+
+       
+        .contact-page {
+            background: #050a11;
+            min-height: 100vh;
+        }
+
+
+     
+
+        .contact-main {
+            padding: 155px 0 70px;
+        }
+
+
+      
+        .contact-main-grid {
+            display: grid;
+            grid-template-columns: 1.55fr 1fr;
+            gap: 28px;
+            align-items: stretch;
+        }
+
+
+     
+
+        .contact-map {
+            position: relative;
+            min-height: 535px;
+            border: 1px solid #83909d;
+            border-radius: 25px;
+            overflow: hidden;
+            background: #030914;
+        }
+
+
+        .contact-map .map-background {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+
+       
+
+        .factory-label {
+            position: absolute;
+            top: 36px;
+            left: 36px;
+            z-index: 5;
+
+            padding: 16px 20px;
+
+            min-width: 260px;
+
+            background: rgba(3, 8, 18, .92);
+
+            border: 1px solid #12304b;
+
+            border-radius: 9px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,.35);
+        }
+
+
+        .factory-label strong {
+            display: block;
+
+            color: #f4f7fa;
+
+            font-size: 14px;
+
+            font-weight: 800;
+        }
+
+
+        .factory-label span {
+            display: block;
+
+            margin-top: 6px;
+
+            color: #a8b5c4;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        .factory-label b {
+            display: block;
+
+            margin-top: 4px;
+
+            color: #91ee00;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 12px;
+
+            letter-spacing: .5px;
+        }
+
+
+        
+        .contact-map .map-pin {
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border: 2px solid #91ee00;
+
+            border-radius: 50%;
+
+            background: rgba(145, 238, 0, .08);
+
+            color: #91ee00;
+
+            font-size: 25px;
+
+            box-shadow:
+                0 0 20px rgba(145,238,0,.30),
+                0 0 45px rgba(145,238,0,.10);
+        }
+
+
+
+        .contact-map .map-controls {
+            position: absolute;
+
+            left: 20px;
+            bottom: 20px;
+
+            z-index: 5;
+
+            display: flex;
+
+            gap: 3px;
+
+            padding: 4px;
+
+            background: rgba(4,10,19,.9);
+
+            border: 1px solid #103452;
+
+            border-radius: 8px;
+        }
+
+
+        .contact-map .map-controls button {
+            padding: 8px 13px;
+
+            border: 0;
+
+            background: transparent;
+
+            color: #7e92a8;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 11px;
+
+            font-weight: 700;
+        }
+
+
+        .contact-map .map-controls button:first-child {
+            background: #101c2b;
+
+            color: #fff;
+
+            border-radius: 5px;
+        }
+
+
+        .map-status {
+            position: absolute;
+
+            right: 28px;
+            bottom: 23px;
+
+            z-index: 5;
+
+            padding: 8px 12px;
+
+            background: rgba(4,10,19,.9);
+
+            border: 1px solid #103452;
+
+            border-radius: 7px;
+
+            color: #667b91;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 10px;
+        }
+
+
+        
+
+        .direct-card {
+            min-height: 535px;
+
+            padding: 38px;
+
+            border: 1px solid #83909d;
+
+            border-radius: 25px;
+
+            background:
+                radial-gradient(
+                    circle at 100% 0%,
+                    rgba(26,54,76,.18),
+                    transparent 45%
+                ),
+                #080f18;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .direct-card h1 {
+            margin: 0 0 12px;
+
+            color: #f7f9fc;
+
+            font-size: 27px;
+
+            font-weight: 900;
+
+            letter-spacing: -.5px;
+        }
+
+
+        .direct-card > p {
+            margin: 0 0 28px;
+
+            color: #8295aa;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+       
+
+        .whatsapp-button {
+            width: 100%;
+
+            min-height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-bottom: 27px;
+
+            border: 0;
+
+            border-radius: 13px;
+
+            background: #22d366;
+
+            color: #031006;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 900;
+
+            box-shadow:
+                0 8px 25px rgba(34,211,102,.18);
+
+            transition: .2s ease;
+        }
+
+
+        .whatsapp-button:hover {
+            transform: translateY(-2px);
+
+            color: #031006;
+
+            box-shadow:
+                0 12px 30px rgba(34,211,102,.28);
+        }
+
+
+        .whatsapp-button i {
+            font-size: 18px;
+        }
+
+
+        
+
+        .direct-info {
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .direct-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 16px 0;
+
+            border-top: 1px solid #152332;
+        }
+
+
+        .direct-item:first-child {
+            border-top: 1px solid #152332;
+        }
+
+
+        .direct-icon {
+            width: 40px;
+            height: 40px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid #17334d;
+
+            border-radius: 8px;
+
+            color: #91ee00;
+
+            background: #081522;
+
+            font-size: 18px;
+        }
+
+
+        .direct-item:nth-child(2) .direct-icon {
+            color: #00d9ff;
+        }
+
+
+        .direct-item:nth-child(3) .direct-icon {
+            color: #91ee00;
+        }
+
+
+        .direct-item small {
+            display: block;
+
+            margin-bottom: 4px;
+
+            color: #8fb0d0;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 9px;
+
+            font-weight: 700;
+        }
+
+
+        .direct-item strong {
+            display: block;
+
+            color: #f3f6f9;
+
+            font-size: 13px;
+
+            font-weight: 800;
+        }
+
+
+        .direct-item span {
+            display: block;
+
+            margin-top: 2px;
+
+            color: #66829f;
+
+            font-size: 11px;
+        }
+
+
+        
+
+        .direct-verified {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            margin-top: auto;
+
+            padding-top: 24px;
+
+            border-top: 1px solid #152332;
+
+            color: #47627e;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .direct-verified i {
+            color: #91ee00;
+
+            font-size: 14px;
+        }
+
+
+        
+
+        .contact-channels {
+            padding: 0 0 72px;
+        }
+
+
+        .channel-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 24px;
+        }
+
+
+        .channel-card {
+            min-height: 92px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+            padding: 20px;
+
+            border: 1px solid #12314b;
+
+            border-radius: 15px;
+
+            background: #080f18;
+
+            transition: .2s ease;
+        }
+
+
+        .channel-card:hover {
+            transform: translateY(-2px);
+
+            border-color: #244e6d;
+        }
+
+
+        .channel-icon {
+            width: 48px;
+            height: 48px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid #124b40;
+
+            border-radius: 11px;
+
+            background: #0a211d;
+
+            color: #21d366;
+
+            font-size: 21px;
+        }
+
+
+        .channel-card:nth-child(2) .channel-icon {
+            border-color: #31520c;
+
+            background: #152208;
+
+            color: #91ee00;
+        }
+
+
+        .channel-card:nth-child(3) .channel-icon {
+            border-color: #084761;
+
+            background: #081c28;
+
+            color: #00d9ff;
+        }
+
+
+        .channel-card small {
+            display: block;
+
+            color: #5d7894;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 9px;
+
+            font-weight: 700;
+        }
+
+
+        .channel-card strong {
+            display: block;
+
+            margin-top: 3px;
+
+            color: #91ee00;
+
+            font-size: 15px;
+
+            font-weight: 900;
+        }
+
+
+        .channel-card:nth-child(2) strong,
+        .channel-card:nth-child(3) strong {
+            color: #f2f5f8;
+        }
+
+
+        .channel-card span {
+            display: block;
+
+            margin-top: 2px;
+
+            color: #55728e;
+
+            font-size: 10px;
+        }
+         
+        
+             .contact-form-section {
+                 padding: 0 0 72px;
+              }
+
+            .contact-form-card {
+                background: #080f18;
+                border: 1px solid #12314b;
+                border-radius: 25px;
+                padding: 38px;
+                box-shadow: 0 15px 40px rgba(0,0,0,.20);
+            }
+
+            .contact-form-header {
+                 margin-bottom: 30px;
+            }
+
+            .contact-form-header small {
+                display: block;
+                margin-bottom: 8px;
+                color: #91ee00;
+                font-family: "JetBrains Mono", monospace;
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
+
+            .contact-form-header h2 {
+                margin: 0 0 10px;
+                color: #f7f9fc;
+                font-size: 30px;
+                font-weight: 900;
+            }
+
+            .contact-form-header p {
+                margin: 0;
+                color: #8295aa;
+                font-size: 14px;
+            }
+
+            .contact-form-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .contact-form-group {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .contact-form-group.full {
+                grid-column: 1 / -1;
+            }
+
+            .contact-form-group label {
+                color: #8fb0d0;
+                font-family: "JetBrains Mono", monospace;
+                font-size: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            .contact-form-group input,
+            .contact-form-group textarea {
+                width: 100%;
+                border: 1px solid #294057;
+                border-radius: 10px;
+                outline: none;
+                background: #050b14;
+                color: #ffffff;
+                font-family: "Inter", sans-serif;
+                font-size: 14px;
+                transition: .2s ease;
+            }
+
+            .contact-form-group input {
+                height: 55px;
+                padding: 0 16px;
+            }
+
+            .contact-form-group textarea {
+                min-height: 150px;
+                padding: 16px;
+                resize: vertical;
+            }
+
+            .contact-form-group input::placeholder,
+            .contact-form-group textarea::placeholder {
+                color: #50657c;
+            }
+
+            .contact-form-group input:focus,
+            .contact-form-group textarea:focus {
+                border-color: #91ee00;
+                box-shadow: 0 0 0 2px rgba(145,238,0,.08);
+            }
+
+            .contact-submit {
+                margin-top: 22px;
+                min-height: 52px;
+                padding: 0 28px;
+                border: 0;
+                border-radius: 10px;
+                background: linear-gradient(90deg, #91ee00, #00c896);
+                color: #050b14;
+                font-size: 13px;
+                font-weight: 900;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: .2s ease;
+            }
+
+            .contact-submit:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px rgba(145,238,0,.18);
+            }
+
+            .contact-submit i {
+                margin-left: 8px;
+            }       
+
+            .contact-message {
+                display: none;
+                margin-top: 18px;
+                padding: 13px 16px;
+                border-radius: 9px;
+                font-size: 13px;
+                font-weight: 700;
+            }
+
+            .contact-message.success {
+                display: block;
+                background: rgba(145,238,0,.08);
+                border: 1px solid #91ee00;
+                color: #91ee00;
+            }
+
+            .contact-message.error {
+                display: block;
+                background: rgba(255,80,90,.08);
+                border: 1px solid #ff505a;
+                color: #ff6b6b;
+            }
+
+            @media (max-width: 576px) {
+
+            .contact-form-card {
+                 padding: 25px;
+                 border-radius: 18px;
+            }
+
+            .contact-form-grid {
+                 grid-template-columns: 1fr;
+            }
+
+            .contact-form-group.full {
+                grid-column: auto;
+            }
+
+            .contact-form-header h2 {
+                 font-size: 25px;
+            }
+
+        }
+
+
+        @media (max-width: 992px) {
+
+            .contact-main {
+                padding-top: 120px;
+            }
+
+            .contact-main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .channel-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-map,
+            .direct-card {
+                min-height: 480px;
+            }
+
+        }
+
+
+        @media (max-width: 576px) {
+
+            .contact-main {
+                padding: 105px 15px 45px;
+            }
+
+            .contact-map {
+                min-height: 400px;
+                border-radius: 18px;
+            }
+
+            .direct-card {
+                min-height: auto;
+                padding: 25px;
+                border-radius: 18px;
+            }
+
+            .factory-label {
+                left: 18px;
+                top: 18px;
+                min-width: auto;
+                right: 18px;
+            }
+
+            .map-status {
+                display: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="contact-page">
+
+
+
+<header class="main-header">
+
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="../index.html"
+                class="brand">
+
+                <div class="brand-symbol">
+                    S
+                </div>
+
+                <div class="brand-text">
+
+                    <strong>
+                        SPORT<span>CUSTOM</span>
+                    </strong>
+
+                    <small>
+                        REMARKABLE UNIFORMS
+                    </small>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- MENÚ MÓVIL -->
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal">
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+
+            <!-- MENÚ -->
+
+            <div
+                class="collapse navbar-collapse"
+                id="menuPrincipal">
+
+                <ul class="navbar-nav mx-auto">
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../index.html">
+
+                            INICIO
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../productos/index.html">
+
+                            COLECCIÓN / MAYORISTA
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link"
+                            href="../personalizador/index.html">
+
+                            PERSONALIZAR
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link active"
+                            href="index.html">
+
+                            CONTACTO
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+
+
+                <!-- ACCIONES -->
+
+                <div class="header-actions">
+
+
+                    <!-- TEMA -->
+
+                    <button
+                        class="header-icon"
+                        id="themeButton"
+                        title="Cambiar tema">
+
+                        <i class="bi bi-sun"></i>
+
+                    </button>
+
+
+
+                    <!-- DISEÑAR AHORA -->
+
+                    <a
+                        href="../personalizador/index.html"
+                        class="design-button">
+
+                        <i class="bi bi-stars"></i>
+
+                        DISEÑAR AHORA
+
+                    </a>
+
+
+
+                    <!-- CARRITO -->
+
+                    <a
+                        href="../carrito/index.html"
+                        class="header-icon cart-link">
+
+                        <i class="bi bi-bag"></i>
+
+                        <span id="cart-count">
+                            0
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ==================================================
+     CONTACTO
+================================================== -->
+
+<main>
+
+
+    <section class="contact-main">
+
+        <div class="container">
+
+
+            <div class="contact-main-grid">
+
+                <!-- ==================================================
+                MAPA GOOGLE
+                ================================================== -->
+
+                <div class="contact-map">
+
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249774.36322971305!2d-86.1269405!3d11.993560400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f74061d911c1529%3A0x4bbab03ea8d4ccf8!2sMasaya!5e0!3m2!1ses-419!2sni!4v1788331492819!5m2!1ses-419!2sni"
+                      width="100%"
+                      height="100%"
+                      style="border:0;"
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+
+                    </div>
+                   
+
+                <!-- ==================================================
+                    CANALES DIRECTOS
+                ================================================== -->
+
+                <div class="direct-card">
+
+
+                    <h1>
+                        CANALES DIRECTOS
+                    </h1>
+
+
+                    <p>
+
+                        ¿Tienes dudas sobre tallas, pedidos
+                        colectivos o el proceso de diseño?
+                        Conversa directamente con nuestro
+                        equipo de atención inmediata.
+
+                    </p>
+
+
+
+                    <!-- WHATSAPP -->
+
+                    <a
+                        href="https:/wa.me/50557722731"
+                        class="whatsapp-button"
+                        target="_blank">
+
+                        <i class="bi bi-chat-fill"></i>
+
+                        WHATSAPP DIRECTO
+
+                    </a>
+
+
+
+                    <!-- INFORMACIÓN -->
+
+                    <div class="direct-info">
+
+
+                        <!-- TELÉFONO -->
+
+                        <div class="direct-item">
+
+                            <div class="direct-icon">
+
+                                <i class="bi bi-telephone"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    TELÉFONO CENTRAL
+                                </small>
+
+                                <strong>
+                                    <a href="tel:+50557722731">
+                                        +(505) 5772-2731
+                                    </a>
+                                    
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- CORREO -->
+
+                        <div class="direct-item">
+
+                            <div class="direct-icon">
+
+                                <i class="bi bi-envelope"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    CORREO ELECTRÓNICO
+                                </small>
+
+                                <strong>
+                                    
+                                    soporte@sportcustom.com
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- SEDE -->
+
+                        <div class="direct-item">
+
+                            <div class="direct-icon">
+
+                                <i class="bi bi-geo-alt"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    SEDE CENTRAL
+                                </small>
+
+                                <strong>
+                                    123 SportCustom Ave.
+                                    Custom City, CC 54321
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- VERIFICADO -->
+
+                    <div class="direct-verified">
+
+                        <i class="bi bi-shield-check"></i>
+
+                        PROVEEDOR DEPORTIVO HOMOLOGADO
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+  
+    <section class="contact-channels">
+
+        <div class="container">
+
+            <div class="channel-grid">
+
+
+                <!-- WHATSAPP -->
+
+                <div class="channel-card">
+
+                    <div class="channel-icon">
+
+                        <i class="bi bi-chat-fill"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            WHATSAPP DIRECTO
+                        </small>
+
+                        <strong>
+                            CHATEAR AHORA
+                        </strong>
+
+                        <span>
+                            +1 (555) 123-4587
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TELÉFONO -->
+
+                <div class="channel-card">
+
+                    <div class="channel-icon">
+
+                        <i class="bi bi-telephone"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            LLAMADA CENTRAL
+                        </small>
+
+                        <strong>
+                            TELEPHONE
+                        </strong>
+
+                        <span>
+                            +1 (555) 123-4587
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="channel-card">
+
+                    <div class="channel-icon">
+
+                        <i class="bi bi-envelope"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            CORREO CENTRAL
+                        </small>
+
+                        <strong>
+                            EMAIL
+                        </strong>
+
+                        <span>
+                            soporte@sportcustom.com
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+              <!-- ==================================================
+                FORMULARIO DE CONTACTO
+                ================================================== -->
+
+            <section class="contact-form-section">
+
+                <div class="container">
+
+                    <div class="contact-form-card">
+
+                        <div class="contact-form-header">
+
+                             <small>
+                                CONTACTO REMARKABLE
+                            </small>
+
+                            <h2>
+                                ENVÍANOS UN MENSAJE
+                            </h2>
+
+                            <p>
+                                ¿Tienes alguna consulta? Nuestro equipo está listo
+                                 para ayudarte con tu pedido, diseño o personalización.
+                            </p>
+
+                        </div>
+
+
+                     <form id="contactForm">
+
+                        <div class="contact-form-grid">
+
+                            <!-- NOMBRE -->
+
+                            <div class="contact-form-group">
+
+                                    <label for="contactNombre">
+                                        Nombre completo
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="contactNombre"
+                                        name="nombre"
+                                        placeholder="Ej: Juan Pérez"
+                                        required>
+
+                            </div>
+
+
+                         <!-- CORREO -->
+
+                        <div class="contact-form-group">
+
+                            <label for="contactCorreo">
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                type="email"
+                                id="contactCorreo"
+                                name="correo"
+                                placeholder="ejemplo@correo.com"
+                                required>
+
+                        </div>
+
+
+                        <!-- TELÉFONO -->
+
+                        <div class="contact-form-group">
+
+                            <label for="contactTelefono">
+                                Teléfono
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="contactTelefono"
+                                name="telefono"
+                                placeholder="+505 8888-8888"
+                                required>
+
+                        </div>
+
+
+                        <!-- ASUNTO -->
+
+                        <div class="contact-form-group">
+
+                            <label for="contactAsunto">
+                                Asunto
+                            </label>
+
+                            <input
+                                type="text"
+                                id="contactAsunto"
+                                name="asunto"
+                                placeholder="Consulta sobre uniformes"
+                                required>
+
+                        </div>
+
+
+                        <!-- MENSAJE -->
+
+                        <div class="contact-form-group full">
+
+                            <label for="contactMensaje">
+                                Mensaje
+                            </label>
+
+                            <textarea
+                                id="contactMensaje"
+                                name="mensaje"
+                                placeholder="Escribe aquí tu consulta..."
+                                required></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="contact-submit">
+
+                        ENVIAR MENSAJE
+
+                        <i class="bi bi-send"></i>
+
+                    </button>
+
+
+                    <div
+                        id="contactMessage"
+                        class="contact-message">
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <section class="benefits-section">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+
+                <!-- 1 -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">
+
+                            <i class="bi bi-star"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                CALIDAD PREMIUM
+                            </h3>
+
+                            <p>
+                                Telas profesionales con tecnología
+                                Pro-Dri.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- 2 -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon cyan">
+
+                            <i class="bi bi-award"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                DISEÑO EXTRAORDINARIO
+                            </h3>
+
+                            <p>
+                                Sé el centro de atención;
+                                destaca en la cancha.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- 3 -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon">
+
+                            <i class="bi bi-shield"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                ENTREGA SEGURA
+                            </h3>
+
+                            <p>
+                                Envíos garantizados y tiempos
+                                rápidos en lote.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- 4 -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="benefit">
+
+                        <div class="benefit-icon cyan">
+
+                            <i class="bi bi-people"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                ATENCIÓN DEDICADA
+                            </h3>
+
+                            <p>
+                                Soporte uno a uno para clubes
+                                y ligas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+
+
+<footer class="main-footer">
+
+    <div class="container">
+
+        <div class="row g-5">
+
+
+            <!-- MARCA -->
+
+            <div class="col-lg-4">
+
+                <div class="footer-brand">
+
+                    <div class="brand-symbol">
+                        S
+                    </div>
+
+                    <div class="brand-text">
+
+                        <strong>
+                            SPORT<span>CUSTOM</span>
+                        </strong>
+
+                        <small>
+                            REMARKABLE UNIFORMS
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <p class="footer-description">
+
+                    Diseñamos indumentaria deportiva
+                    extraordinaria para equipos que rechazan
+                    pasar desapercibidos y exigen el protagonismo
+                    absoluto con diseños 100% personalizados.
+
+                </p>
+
+
+                <div class="social-links">
+
+                    <a href="#">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-globe"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MENÚ -->
+
+            <div class="col-md-4 col-lg-2">
+
+                <h4>
+                    MENÚ
+                </h4>
+
+
+                <div class="footer-links">
+
+                    <a href="../index.html">
+                        › Inicio
+                    </a>
+
+                    <a href="../productos/index.html">
+                        › Catálogo Mayorista
+                    </a>
+
+                    <a href="../personalizador/index.html">
+                        › Diseñador 3D
+                    </a>
+
+                    <a href="index.html">
+                        › Contacto
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SOPORTE -->
+
+            <div class="col-md-4 col-lg-2">
+
+                <h4>
+                    SOPORTE
+                </h4>
+
+
+                <div class="footer-links">
+
+                    <a href="#">
+                        › Centro de Ayuda
+                    </a>
+
+                    <a href="#">
+                        › Guía de Tallas
+                    </a>
+
+                    <a href="#">
+                        › Logística y Envíos
+                    </a>
+
+                    <a href="#">
+                        › Preguntas Frecuentes
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            
+
+            <div class="col-md-4 col-lg-4">
+
+                <h4>
+                    BOLETÍN REMARKABLE
+                </h4>
+
+
+                <p class="newsletter-text">
+
+                    Únete para recibir guías exclusivas de marketing
+                    de equipos deportivos y lanzamientos de nuevas
+                    plantillas únicas.
+
+                </p>
+
+
+                <form
+                    class="newsletter-form"
+                    id="newsletterForm">
+
+                    <input
+                        type="email"
+                        id="newsletterEmail"
+                        placeholder="Ingresa tu correo"
+                        required>
+
+
+                    <button type="submit">
+
+                        Enviar
+
+                        <i class="bi bi-send"></i>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+
+
+      
+        <div class="footer-bottom">
+
+            <span>
+
+                © 2026 SPORTCUSTOM Corporation.
+                Todos los derechos reservados.
+
+            </span>
+
+
+            <div>
+
+                <a href="#">
+                    Términos y Condiciones
+                </a>
+
+                <a href="#">
+                    Política de Privacidad
+                </a>
+
+                <a href="#">
+                    Preferencias de Cookies
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<button
+    class="back-top"
+    id="backTop">
+
+    <i class="bi bi-arrow-up"></i>
+
+</button>
+
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+        <script>
+
+        document.getElementById("contactForm").addEventListener(
+              "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+
+                const form = this;
+
+                const messageBox =
+                document.getElementById("contactMessage");
+
+
+                const datos = {
+
+                    nombre:
+                        document.getElementById("contactNombre").value.trim(),
+
+                    correo:
+                        document.getElementById("contactCorreo").value.trim(),
+
+                    telefono:
+                        document.getElementById("contactTelefono").value.trim(),
+
+                    asunto:
+                        document.getElementById("contactAsunto").value.trim(),
+
+                    mensaje:
+                        document.getElementById("contactMensaje").value.trim()
+
+                };
+
+
+            messageBox.className = "contact-message";
+
+            messageBox.textContent = "Enviando mensaje...";
+
+            messageBox.style.display = "block";
+
+
+            try {
+
+                const respuesta = await fetch(
+                    "../../backend/mensajes.php",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify(datos)
+                }
+            );
+
+
+            const resultado = await respuesta.json();
+
+
+            if (resultado.success) {
+
+                messageBox.className =
+                    "contact-message success";
+
+                messageBox.textContent =
+                    resultado.message;
+
+                form.reset();
+
+            } else {
+
+                messageBox.className =
+                    "contact-message error";
+
+                messageBox.textContent =
+                    resultado.message;
+            }
+
+
+        } catch (error) {
+
+            console.error(error);
+
+            messageBox.className =
+                "contact-message error";
+
+            messageBox.textContent =
+                "No se pudo enviar el mensaje. Intenta nuevamente.";
+
+        }
+
+    }
+
+);
+
+</script>
+
+
+<script src="../js/main.js"></script>
+
+
+</body>
+
+</html>

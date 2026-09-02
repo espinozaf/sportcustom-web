@@ -1,0 +1,2348 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | SPORTCUSTOM</title>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #050a12;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+        }
+
+       
+
+        header {
+            height: 115px;
+            border-bottom: 2px solid;
+            border-image: linear-gradient(
+                90deg,
+                #a3e635,
+                #00c9d9
+            ) 1;
+
+            display: flex;
+            align-items: center;
+            padding: 0 6%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-box {
+            width: 60px;
+            height: 60px;
+
+            border-radius: 14px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: linear-gradient(
+                135deg,
+                #a3e635,
+                #00d4d4
+            );
+
+            color: #06101a;
+
+            font-size: 30px;
+            font-weight: 900;
+        }
+
+        .logo-text {
+            font-size: 30px;
+            font-weight: 900;
+        }
+
+        .logo-text span {
+            color: #a3e635;
+        }
+
+        .logo-subtitle {
+            color: #00d5e9;
+            font-family: monospace;
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-top: 3px;
+        }
+
+      
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 50px 0 80px;
+        }
+
+       
+
+        .checkout-header {
+            margin-bottom: 35px;
+        }
+
+        .back-cart {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-bottom: 25px;
+
+            color: #718daa;
+
+            font-family: monospace;
+            font-size: 11px;
+            font-weight: 700;
+
+            text-decoration: none;
+
+            transition: .2s;
+        }
+
+        .back-cart:hover {
+            color: #a3e635;
+            transform: translateX(-3px);
+        }
+
+        .checkout-header small {
+            display: block;
+
+            color: #a3e635;
+
+            font-family: monospace;
+            font-size: 12px;
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+        }
+
+        .checkout-header h1 {
+            font-size: clamp(38px, 5vw, 70px);
+            line-height: .95;
+            font-weight: 900;
+        }
+
+        .checkout-header h1 span {
+            background: linear-gradient(
+                90deg,
+                #a3e635,
+                #00c9d9
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .checkout-header p {
+            margin-top: 18px;
+
+            color: #7892ad;
+
+            font-size: 17px;
+        }
+
+       
+        .checkout-layout {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.7fr)
+                minmax(320px, .8fr);
+
+            gap: 35px;
+
+            align-items: start;
+        }
+
+        .checkout-box,
+        .summary-box {
+            border: 1px solid #294057;
+            border-radius: 22px;
+
+            background: #08111e;
+        }
+
+        .checkout-box {
+            padding: 32px;
+        }
+
+        .summary-box {
+            padding: 30px;
+
+            position: sticky;
+            top: 25px;
+        }
+
+
+        .welcome-register {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 38px;
+            padding: 24px;
+            border: 1px solid #3d6720;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(163,230,53,.08), rgba(0,201,139,.04));
+        }
+
+        .welcome-icon {
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 13px;
+            background: #122414;
+            color: #a3e635;
+            font-size: 23px;
+        }
+
+        .welcome-content { flex: 1; }
+
+        .welcome-tag {
+            color: #a3e635;
+            font-family: monospace;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1.3px;
+        }
+
+        .welcome-content h2 {
+            margin: 6px 0 8px;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .welcome-content p {
+            color: #7892ad;
+            font-size: 12px;
+            line-height: 1.55;
+        }
+
+        .discount-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 18px 0;
+        }
+
+        .discount-item {
+            padding: 12px;
+            border: 1px solid #294057;
+            border-radius: 10px;
+            background: #050b14;
+            text-align: center;
+        }
+
+        .discount-item strong {
+            display: block;
+            color: #a3e635;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .discount-item span {
+            color: #7189a4;
+            font-size: 9px;
+        }
+
+        .welcome-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .register-button,
+        .login-button,
+        .guest-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            min-height: 44px;
+            padding: 11px 14px;
+            border-radius: 9px;
+            font-size: 10px;
+            font-weight: 900;
+            text-decoration: none;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .register-button {
+            background: #a3e635;
+            color: #06100a;
+            border: 1px solid #a3e635;
+        }
+
+        .login-button {
+            background: transparent;
+            color: #a3e635;
+            border: 1px solid #527d27;
+        }
+
+        .guest-button {
+            grid-column: 1 / -1;
+            background: transparent;
+            color: #718daa;
+            border: 1px solid #294057;
+        }
+
+        .register-button:hover,
+        .login-button:hover,
+        .guest-button:hover {
+            transform: translateY(-1px);
+        }
+
+        .register-button:hover { color: #06100a; }
+
+        .login-button:hover {
+            color: #a3e635;
+            border-color: #a3e635;
+        }
+
+        .guest-button:hover {
+            color: #ffffff;
+            border-color: #718daa;
+        }
+
+        .welcome-note {
+            display: block;
+            margin-top: 12px;
+            color: #506a84;
+            font-size: 9px;
+            line-height: 1.5;
+        }
+
+
+        
+
+        .section {
+            margin-bottom: 38px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            padding-bottom: 14px;
+
+            margin-bottom: 22px;
+
+            border-bottom: 1px dashed #294057;
+
+            font-size: 17px;
+            font-weight: 900;
+        }
+
+        .section-title i {
+            color: #a3e635;
+            font-size: 20px;
+        }
+
+        .number {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 30px;
+            height: 30px;
+
+            border-radius: 8px;
+
+            background: #122414;
+            color: #a3e635;
+
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+  
+
+        .form-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            color: #7691ad;
+
+            font-family: monospace;
+            font-size: 10px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        input,
+        select {
+            width: 100%;
+
+            height: 55px;
+
+            padding: 0 16px;
+
+            border: 1px solid #294057;
+            border-radius: 10px;
+
+            outline: none;
+
+            background: #050b14;
+            color: #ffffff;
+
+            font-size: 14px;
+
+            transition: .2s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #a3e635;
+
+            box-shadow:
+                0 0 0 2px rgba(163, 230, 53, .08);
+        }
+
+        select option {
+            background: #08111e;
+            color: #ffffff;
+        }
+
+       
+
+        .shipping-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+        .shipping-option {
+            position: relative;
+        }
+
+        .shipping-option input {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .shipping-label {
+            display: block;
+
+            min-height: 145px;
+
+            padding: 20px;
+
+            border: 1px solid #294057;
+            border-radius: 15px;
+
+            cursor: pointer;
+
+            background: #050b14;
+
+            transition: .2s;
+        }
+
+        .shipping-label:hover {
+            border-color: #6e992c;
+        }
+
+        .shipping-option input:checked + .shipping-label {
+            border-color: #a3e635;
+
+            background: rgba(163, 230, 53, .06);
+
+            box-shadow:
+                0 0 20px rgba(163, 230, 53, .05);
+        }
+
+        .shipping-top {
+            display: flex;
+            justify-content: space-between;
+
+            margin-bottom: 12px;
+        }
+
+        .shipping-type {
+            color: #6f8aa7;
+
+            font-family: monospace;
+            font-size: 10px;
+        }
+
+        .shipping-price {
+            color: #a3e635;
+
+            font-family: monospace;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .shipping-label strong {
+            display: block;
+
+            margin-bottom: 12px;
+
+            font-size: 14px;
+        }
+
+        .shipping-label small {
+            color: #7189a4;
+
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+       
+
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .payment-option {
+            position: relative;
+        }
+
+        .payment-option input {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .payment-label {
+            display: flex;
+            align-items: center;
+
+            gap: 16px;
+
+            padding: 18px;
+
+            border: 1px solid #294057;
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            background: #050b14;
+
+            transition: .2s;
+        }
+
+        .payment-label:hover {
+            border-color: #6e992c;
+        }
+
+        .payment-option input:checked + .payment-label {
+            border-color: #a3e635;
+            background: rgba(163, 230, 53, .05);
+        }
+
+        .payment-label i {
+            color: #a3e635;
+            font-size: 25px;
+        }
+
+        .payment-label strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .payment-label small {
+            color: #7189a4;
+        }
+
+        
+        #card-data {
+            display: none;
+
+            margin-top: 25px;
+
+            padding: 25px;
+
+            border: 1px solid #1d3b3e;
+            border-radius: 15px;
+
+            background: #061019;
+        }
+
+        #card-data.active {
+            display: block;
+        }
+
+        .card-title {
+            margin-bottom: 20px;
+
+            color: #a3e635;
+
+            font-family: monospace;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .card-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .card-grid .full {
+            grid-column: 1 / -1;
+        }
+
+        .security-message {
+            margin-top: 18px;
+
+            color: #55738f;
+
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .security-message i {
+            color: #a3e635;
+        }
+
+      
+
+        .summary-title {
+            color: #ffffff;
+
+            font-size: 20px;
+            font-weight: 900;
+
+            margin-bottom: 25px;
+        }
+
+        .product-summary {
+            display: flex;
+            align-items: center;
+
+            gap: 15px;
+
+            padding-bottom: 20px;
+
+            border-bottom: 1px solid #1d2c3c;
+        }
+
+        .product-image {
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: linear-gradient(
+                135deg,
+                #a3e635,
+                #0d4b2e
+            );
+
+            color: #07100c;
+
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-info small {
+            display: block;
+
+            color: #00c9d9;
+
+            font-family: monospace;
+            font-size: 9px;
+
+            margin-bottom: 5px;
+        }
+
+        .product-info strong {
+            display: block;
+            font-size: 14px;
+        }
+
+        .product-info span {
+            color: #7189a4;
+            font-size: 11px;
+        }
+
+        .product-price {
+            color: #a3e635;
+            font-weight: bold;
+        }
+
+        .summary-lines {
+            padding: 22px 0;
+        }
+
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+
+            margin-bottom: 15px;
+
+            color: #7189a4;
+
+            font-size: 13px;
+        }
+
+        .summary-line strong {
+            color: #ffffff;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding-top: 22px;
+
+            border-top: 1px solid #1d2c3c;
+        }
+
+        .summary-total span {
+            font-weight: 900;
+        }
+
+        .summary-total strong {
+            color: #a3e635;
+
+            font-size: 30px;
+        }
+
+        
+        .confirm-button {
+            width: 100%;
+
+            height: 58px;
+
+            margin-top: 25px;
+
+            border: none;
+            border-radius: 11px;
+
+            background: linear-gradient(
+                90deg,
+                #a3e635,
+                #00c98b
+            );
+
+            color: #06100a;
+
+            font-size: 13px;
+            font-weight: 900;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+        .confirm-button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 25px rgba(163, 230, 53, .18);
+        }
+
+        .cancel-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            width: 100%;
+
+            margin-top: 12px;
+            padding: 15px;
+
+            border: 1px solid #294057;
+            border-radius: 10px;
+
+            background: transparent;
+
+            color: #718daa;
+
+            font-size: 10px;
+            font-weight: 800;
+
+            text-decoration: none;
+
+            transition: .2s;
+        }
+
+        .cancel-button:hover {
+            border-color: #ff6b6b;
+            color: #ff6b6b;
+        }
+
+        .protected {
+            margin-top: 20px;
+
+            text-align: center;
+
+            color: #4e6983;
+
+            font-family: monospace;
+            font-size: 9px;
+        }
+
+        .protected i {
+            color: #a3e635;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 30px 6%;
+
+            border-top: 1px solid #182838;
+
+            text-align: center;
+
+            color: #4e6983;
+
+            font-size: 11px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .checkout-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-box {
+                position: static;
+            }
+
+            .shipping-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            header {
+                height: 90px;
+                padding: 0 20px;
+            }
+
+            .logo-box {
+                width: 45px;
+                height: 45px;
+
+                font-size: 22px;
+            }
+
+            .logo-text {
+                font-size: 22px;
+            }
+
+            .container {
+                width: 94%;
+                padding-top: 30px;
+            }
+
+            .checkout-box,
+            .summary-box {
+                padding: 20px;
+            }
+
+            .form-grid,
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full,
+            .card-grid .full {
+                grid-column: auto;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-box">
+            S
+        </div>
+
+        <div>
+
+            <div class="logo-text">
+                SPORT<span>CUSTOM</span>
+            </div>
+
+            <div class="logo-subtitle">
+                REMARKABLE UNIFORMS
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <div class="container">
+
+
+        
+
+        <div class="checkout-header">
+
+            <a
+                href="../carrito/index.html"
+                class="back-cart">
+
+                <i class="bi bi-arrow-left"></i>
+
+                VOLVER AL CARRITO
+
+            </a>
+
+
+            <small>
+                REMARKABLE CHECKOUT
+            </small>
+
+
+            <h1>
+
+                FINALIZA TU
+
+                <span>
+                    PEDIDO.
+                </span>
+
+            </h1>
+
+
+            <p>
+                Completa tus datos para preparar tu pedido.
+            </p>
+
+        </div>
+
+
+
+        <div class="checkout-layout">
+
+
+            <!-- =========================
+                 FORMULARIO
+            ========================= -->
+
+            <div class="checkout-box">
+
+
+               
+
+            <section class="welcome-register" id="welcome-register">
+            <div class="welcome-icon">
+             <i class="bi bi-gift-fill"></i>
+            </div>
+
+            <div class="welcome-content">
+                 <span class="welcome-tag">OFERTA PARA NUEVOS CLIENTES</span>
+
+                    <h2>¡REGÍSTRATE Y OBTÉN UN DESCUENTO!</h2>
+
+                        <p>
+                         Crea tu cuenta SPORTCUSTOM y recibe un descuento especial
+                        en tu primer pedido según el monto de tu compra.
+                         </p>
+
+            <div class="discount-options">
+                <div class="discount-item">
+                    <strong>5%</strong>
+                    <span>Menos de $50</span>
+                </div>
+
+            <div class="discount-item">
+                <strong>10%</strong>
+                <span>$50 – $99.99</span>
+            </div>
+
+            <div class="discount-item">
+                <strong>15%</strong>
+                <span>$100 o más</span>
+            </div>
+        </div>
+
+        <div class="welcome-actions">
+            <a href="../usuario/registro.html" class="register-button">
+                <i class="bi bi-person-plus-fill"></i>
+                CREAR MI CUENTA
+            </a>
+
+            <a href="../usuario/login.html" class="login-button">
+                <i class="bi bi-box-arrow-in-right"></i>
+                INICIAR SESIÓN
+            </a>
+
+            <button type="button" class="guest-button" id="continueGuest">
+                CONTINUAR COMO INVITADO
+            </button>
+        </div>
+
+        <small class="welcome-note">
+            El descuento de bienvenida se aplicará una sola vez al primer
+            pedido de una cuenta registrada.
+        </small>
+    </div>
+</section>
+
+
+<!-- DATOS CLIENTE -->
+
+                <section class="section">
+
+                    <h2 class="section-title">
+
+                        <span class="number">
+                            01
+                        </span>
+
+                        DATOS DEL CLIENTE
+
+                    </h2>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Nombre completo
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nombre"
+                                placeholder="Ej: Javiera Espinoza"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                type="email"
+                                id="correo"
+                                placeholder="ejemplo@correo.com"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Teléfono
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="telefono"
+                                placeholder="Ej: +505 8888-8888"
+                                required>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- DATOS DE ENVIO -->
+
+                <section class="section">
+
+                    <h2 class="section-title">
+
+                        <span class="number">
+                            02
+                        </span>
+
+                        DATOS DE ENVÍO
+
+                    </h2>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- PAIS -->
+
+                        <div class="form-group">
+
+                            <label>
+                                País
+                            </label>
+
+                            <select id="pais">
+
+                                <option value="">
+                                    Selecciona un país
+                                </option>
+
+                                <option value="nicaragua">
+                                    Nicaragua
+                                </option>
+
+                                <option value="costa-rica">
+                                    Costa Rica
+                                </option>
+
+                                <option value="honduras">
+                                    Honduras
+                                </option>
+
+                                <option value="el-salvador">
+                                    El Salvador
+                                </option>
+
+                                <option value="guatemala">
+                                    Guatemala
+                                </option>
+
+                                <option value="panama">
+                                    Panamá
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- DEPARTAMENTO -->
+
+                        <div class="form-group">
+
+                            <label>
+                                Departamento / Estado
+                            </label>
+
+                            <select id="departamento">
+
+                                <option value="">
+                                    Primero selecciona un país
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- CIUDAD -->
+
+                        <div class="form-group">
+
+                            <label>
+                                Ciudad / Municipio
+                            </label>
+
+                            <input
+                                type="text"
+                                id="ciudad"
+                                placeholder="Ej: Managua"
+                                required>
+
+                        </div>
+
+
+                        <!-- CODIGO -->
+
+                        <div class="form-group">
+
+                            <label>
+                                Código postal
+                            </label>
+
+                            <input
+                                type="text"
+                                id="codigoPostal"
+                                placeholder="Ej: 14001">
+
+                        </div>
+
+
+                        <!-- DIRECCION -->
+
+                        <div class="form-group full">
+
+                            <label>
+                                Dirección completa
+                            </label>
+
+                            <input
+                                type="text"
+                                id="direccion"
+                                placeholder="Ej: Barrio Centroamérica, casa #123"
+                                required>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ENVIO -->
+
+                <section class="section">
+
+                    <h2 class="section-title">
+
+                        <span class="number">
+                            03
+                        </span>
+
+                        MÉTODO DE ENVÍO
+
+                    </h2>
+
+
+                    <div class="shipping-grid">
+
+
+                        <div class="shipping-option">
+
+                            <input
+                                type="radio"
+                                id="envio-standard"
+                                name="envio"
+                                value="0"
+                                checked>
+
+                            <label
+                                for="envio-standard"
+                                class="shipping-label">
+
+                                <div class="shipping-top">
+
+                                    <span class="shipping-type">
+                                        STANDARD
+                                    </span>
+
+                                    <span class="shipping-price">
+                                        GRATIS
+                                    </span>
+
+                                </div>
+
+                                <strong>
+                                    ENVÍO COLECTIVO
+                                </strong>
+
+                                <small>
+                                    Entrega estimada en 7-10 días hábiles.
+                                </small>
+
+                            </label>
+
+                        </div>
+
+
+
+                        <div class="shipping-option">
+
+                            <input
+                                type="radio"
+                                id="envio-rapido"
+                                name="envio"
+                                value="15">
+
+                            <label
+                                for="envio-rapido"
+                                class="shipping-label">
+
+                                <div class="shipping-top">
+
+                                    <span class="shipping-type">
+                                        RAPID TIER
+                                    </span>
+
+                                    <span class="shipping-price">
+                                        $15.00
+                                    </span>
+
+                                </div>
+
+                                <strong>
+                                    AÉREO EXPRESS
+                                </strong>
+
+                                <small>
+                                    Entrega prioritaria en 3-5 días hábiles.
+                                </small>
+
+                            </label>
+
+                        </div>
+
+
+
+                        <div class="shipping-option">
+
+                            <input
+                                type="radio"
+                                id="envio-vip"
+                                name="envio"
+                                value="35">
+
+                            <label
+                                for="envio-vip"
+                                class="shipping-label">
+
+                                <div class="shipping-top">
+
+                                    <span class="shipping-type">
+                                        VIP DIRECT
+                                    </span>
+
+                                    <span class="shipping-price">
+                                        $35.00
+                                    </span>
+
+                                </div>
+
+                                <strong>
+                                    SPORTCUSTOM PRIME
+                                </strong>
+
+                                <small>
+                                    Seguimiento prioritario y entrega en 1-2 días.
+                                </small>
+
+                            </label>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- METODO DE PAGO -->
+
+                <section class="section">
+
+                    <h2 class="section-title">
+
+                        <span class="number">
+                            04
+                        </span>
+
+                        MÉTODO DE PAGO
+
+                    </h2>
+
+
+                    <div class="payment-options">
+
+
+                        <!-- TARJETA -->
+
+                        <div class="payment-option">
+
+                            <input
+                                type="radio"
+                                id="tarjeta"
+                                name="pago"
+                                value="tarjeta"
+                                checked>
+
+                            <label
+                                for="tarjeta"
+                                class="payment-label">
+
+                                <i class="bi bi-credit-card"></i>
+
+                                <div>
+
+                                    <strong>
+                                        TARJETA
+                                    </strong>
+
+                                    <small>
+                                        Pago seguro con tarjeta
+                                    </small>
+
+                                </div>
+
+                            </label>
+
+                        </div>
+
+
+
+                        <!-- TRANSFERENCIA -->
+
+                        <div class="payment-option">
+
+                            <input
+                                type="radio"
+                                id="transferencia"
+                                name="pago"
+                                value="transferencia">
+
+                            <label
+                                for="transferencia"
+                                class="payment-label">
+
+                                <i class="bi bi-bank"></i>
+
+                                <div>
+
+                                    <strong>
+                                        TRANSFERENCIA BANCARIA
+                                    </strong>
+
+                                    <small>
+                                        Recibirás instrucciones después del pedido
+                                    </small>
+
+                                </div>
+
+                            </label>
+
+                        </div>
+
+
+
+                        <!-- CONTRA ENTREGA -->
+
+                        <div class="payment-option">
+
+                            <input
+                                type="radio"
+                                id="efectivo"
+                                name="pago"
+                                value="efectivo">
+
+                            <label
+                                for="efectivo"
+                                class="payment-label">
+
+                                <i class="bi bi-cash-stack"></i>
+
+                                <div>
+
+                                    <strong>
+                                        PAGO CONTRA ENTREGA
+                                    </strong>
+
+                                    <small>
+                                        Disponible según zona
+                                    </small>
+
+                                </div>
+
+                            </label>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- DATOS TARJETA -->
+
+                    <div
+                        id="card-data"
+                        class="active">
+
+                        <div class="card-title">
+
+                            <i class="bi bi-lock"></i>
+
+                            DATOS DE LA TARJETA
+
+                        </div>
+
+
+                        <div class="card-grid">
+
+
+                            <div class="form-group full">
+
+                                <label>
+                                    Nombre del titular
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="titular"
+                                    placeholder="Nombre que aparece en la tarjeta">
+
+                            </div>
+
+
+                            <div class="form-group full">
+
+                                <label>
+                                    Número de tarjeta
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="numeroTarjeta"
+                                    placeholder="0000 0000 0000 0000"
+                                    maxlength="19">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Vencimiento
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="vencimiento"
+                                    placeholder="MM/YY"
+                                    maxlength="5">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    CVV
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="cvv"
+                                    placeholder="***"
+                                    maxlength="4">
+
+                            </div>
+
+
+                        </div>
+
+
+                        <p class="security-message">
+
+                            <i class="bi bi-shield-lock"></i>
+
+                            En la versión académica estos datos solamente
+                            se utilizan para simular el proceso de pago.
+                            No se almacenarán en MySQL.
+
+                        </p>
+
+                    </div>
+
+
+                </section>
+
+
+            </div>
+
+
+
+            
+            <aside class="summary-box">
+
+
+                <h2 class="summary-title">
+                    RESUMEN DEL PEDIDO
+                </h2>
+
+
+                <div class="product-summary">
+
+
+                    <div class="product-image">
+                        10
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <small>
+                            SOCCER
+                        </small>
+
+                        <strong>
+                            UNIFORME PERSONALIZADO
+                        </strong>
+
+                        <span>
+                            SPORT · Talla S · Cantidad 1
+                        </span>
+
+                    </div>
+
+
+                    <strong class="product-price">
+                        $49.99
+                    </strong>
+
+
+                </div>
+
+
+
+                <div class="summary-lines">
+
+
+                    <div class="summary-line">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong>
+                            $49.99
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-line">
+
+                        <span>
+                            Envío
+                        </span>
+
+                        <strong id="shipping-price">
+                            GRATIS
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="summary-total">
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <strong id="total-price">
+                        $49.99
+                    </strong>
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    id="confirmOrder"
+                    class="confirm-button">
+
+                    <i class="bi bi-check2-circle"></i>
+
+                    CONFIRMAR PEDIDO
+
+                </button>
+
+
+
+                <a
+                    href="../carrito/index.html"
+                    class="cancel-button">
+
+                    <i class="bi bi-x-circle"></i>
+
+                    CANCELAR Y VOLVER AL CARRITO
+
+                </a>
+
+
+
+                <p class="protected">
+
+                    <i class="bi bi-shield-lock"></i>
+
+                    INFORMACIÓN PROTEGIDA
+
+                </p>
+
+
+            </aside>
+
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    © 2026 SPORTCUSTOM Corporation.
+    Todos los derechos reservados.
+
+</footer>
+
+
+
+<script>
+
+/* =========================================
+   CONTINUAR COMO INVITADO
+========================================= */
+
+const continueGuest =
+    document.getElementById("continueGuest");
+
+const welcomeRegister =
+    document.getElementById("welcome-register");
+
+if (continueGuest && welcomeRegister) {
+    continueGuest.addEventListener("click", function () {
+        welcomeRegister.style.display = "none";
+    });
+}
+
+
+const departamentos = {
+
+    "nicaragua": [
+        "Managua",
+        "Masaya",
+        "Granada",
+        "León",
+        "Carazo",
+        "Rivas",
+        "Chinandega",
+        "Estelí",
+        "Matagalpa",
+        "Jinotega",
+        "Boaco",
+        "Chontales",
+        "Nueva Segovia",
+        "Madriz",
+        "Río San Juan",
+        "Costa Caribe Norte",
+        "Costa Caribe Sur"
+    ],
+
+    "costa-rica": [
+        "San José",
+        "Alajuela",
+        "Cartago",
+        "Heredia",
+        "Guanacaste",
+        "Puntarenas",
+        "Limón"
+    ],
+
+    "honduras": [
+        "Francisco Morazán",
+        "Cortés",
+        "Atlántida",
+        "Yoro",
+        "Comayagua",
+        "Choluteca",
+        "Olancho",
+        "Copán",
+        "Colón",
+        "Santa Bárbara"
+    ],
+
+    "el-salvador": [
+        "San Salvador",
+        "La Libertad",
+        "Santa Ana",
+        "San Miguel",
+        "Sonsonate",
+        "Usulután",
+        "La Paz",
+        "Cuscatlán"
+    ],
+
+    "guatemala": [
+        "Guatemala",
+        "Alta Verapaz",
+        "Baja Verapaz",
+        "Chimaltenango",
+        "Escuintla",
+        "Huehuetenango",
+        "Izabal",
+        "Jalapa",
+        "Jutiapa",
+        "Petén",
+        "Quetzaltenango",
+        "Sacatepéquez"
+    ],
+
+    "panama": [
+        "Panamá",
+        "Colón",
+        "Chiriquí",
+        "Coclé",
+        "Darién",
+        "Herrera",
+        "Los Santos",
+        "Veraguas"
+    ]
+
+};
+
+
+/* =========================================
+   CAMBIO DE PAIS
+========================================= */
+
+const pais = document.getElementById("pais");
+
+const departamento =
+    document.getElementById("departamento");
+
+
+pais.addEventListener("change", function () {
+
+    const seleccionado = this.value;
+
+    departamento.innerHTML = "";
+
+    if (!seleccionado) {
+
+        departamento.innerHTML = `
+            <option value="">
+                Primero selecciona un país
+            </option>
+        `;
+
+        return;
+    }
+
+
+    departamento.innerHTML = `
+        <option value="">
+            Selecciona departamento
+        </option>
+    `;
+
+
+    departamentos[seleccionado].forEach(function (nombre) {
+
+        const option =
+            document.createElement("option");
+
+        option.value = nombre;
+        option.textContent = nombre;
+
+        departamento.appendChild(option);
+
+    });
+
+});
+
+
+/* =========================================
+   METODO DE PAGO
+========================================= */
+
+const paymentMethods =
+    document.querySelectorAll(
+        'input[name="pago"]'
+    );
+
+const cardData =
+    document.getElementById("card-data");
+
+
+paymentMethods.forEach(function (method) {
+
+    method.addEventListener("change", function () {
+
+        if (this.value === "tarjeta") {
+
+            cardData.classList.add("active");
+
+        } else {
+
+            cardData.classList.remove("active");
+
+        }
+
+    });
+
+});
+
+
+/* =========================================
+   CAMBIO DE ENVIO
+========================================= */
+
+const shippingMethods =
+    document.querySelectorAll(
+        'input[name="envio"]'
+    );
+
+const shippingPrice =
+    document.getElementById("shipping-price");
+
+const totalPrice =
+    document.getElementById("total-price");
+
+
+const subtotal = 49.99;
+
+
+shippingMethods.forEach(function (method) {
+
+    method.addEventListener("change", function () {
+
+        const shipping =
+            parseFloat(this.value);
+
+        const total =
+            subtotal + shipping;
+
+
+        if (shipping === 0) {
+
+            shippingPrice.textContent =
+                "GRATIS";
+
+        } else {
+
+            shippingPrice.textContent =
+                "$" + shipping.toFixed(2);
+
+        }
+
+
+        totalPrice.textContent =
+            "$" + total.toFixed(2);
+
+    });
+
+});
+
+
+/* =========================================
+   FORMATO NUMERO TARJETA
+========================================= */
+
+const numeroTarjeta =
+    document.getElementById(
+        "numeroTarjeta"
+    );
+
+
+numeroTarjeta.addEventListener(
+    "input",
+    function () {
+
+        let value =
+            this.value
+                .replace(/\D/g, "")
+                .substring(0, 16);
+
+
+        let resultado = "";
+
+
+        for (
+            let i = 0;
+            i < value.length;
+            i++
+        ) {
+
+            if (
+                i > 0 &&
+                i % 4 === 0
+            ) {
+
+                resultado += " ";
+
+            }
+
+            resultado += value[i];
+
+        }
+
+
+        this.value = resultado;
+
+    }
+);
+
+
+/* =========================================
+   VENCIMIENTO
+========================================= */
+
+const vencimiento =
+    document.getElementById(
+        "vencimiento"
+    );
+
+
+vencimiento.addEventListener(
+    "input",
+    function () {
+
+        let value =
+            this.value
+                .replace(/\D/g, "")
+                .substring(0, 4);
+
+
+        if (value.length >= 3) {
+
+            value =
+                value.substring(0, 2)
+                + "/"
+                + value.substring(2);
+
+        }
+
+
+        this.value = value;
+
+    }
+);
+
+
+/* =========================================
+   CONFIRMAR PEDIDO
+========================================= */
+
+const confirmOrder =
+    document.getElementById(
+        "confirmOrder"
+    );
+
+
+confirmOrder.addEventListener(
+    "click",
+     async function () {
+                  // COMPROBAR SI EL CLIENTE YA TIENE SESIÓN
+        try {
+
+            const respuestaUsuario = await fetch(
+                "../../backend/usuario.php",
+                {
+                    method: "GET",
+                    credentials: "same-origin",
+                    cache: "no-store"
+                }
+            );
+
+            const usuario = await respuestaUsuario.json();
+
+            console.log("Usuario detectado:", usuario);
+
+            // Si hay sesión, cargar automáticamente sus datos
+            if (usuario.sesion === true) {
+
+                if (usuario.nombre) {
+                    document.getElementById("nombre").value =
+                        usuario.nombre;
+                }
+
+                if (usuario.correo) {
+                    document.getElementById("correo").value =
+                        usuario.correo;
+                }
+
+                if (usuario.telefono) {
+                    document.getElementById("telefono").value =
+                        usuario.telefono;
+                }
+
+                if (usuario.direccion) {
+                    document.getElementById("direccion").value =
+                        usuario.direccion;
+                }
+            }
+
+        } catch (error) {
+
+            console.error(
+                "No se pudo comprobar la sesión:",
+                error
+            );
+        }
+
+        const nombre =
+            document.getElementById(
+                "nombre"
+            ).value.trim();
+
+
+        const correo =
+            document.getElementById(
+                "correo"
+            ).value.trim();
+
+
+        const telefono =
+            document.getElementById(
+                "telefono"
+            ).value.trim();
+
+
+        const paisSeleccionado =
+            pais.value;
+
+
+        const departamentoSeleccionado =
+            departamento.value;
+
+
+        const ciudad =
+            document.getElementById(
+                "ciudad"
+            ).value.trim();
+
+
+        const direccion =
+            document.getElementById(
+                "direccion"
+            ).value.trim();
+
+
+        if (
+            !nombre ||
+            !correo ||
+            !telefono ||
+            !paisSeleccionado ||
+            !departamentoSeleccionado ||
+            !ciudad ||
+            !direccion
+        ) {
+
+            alert(
+                "Por favor completa todos los datos del cliente y envío."
+            );
+
+            return;
+
+        }
+
+
+        const pagoSeleccionado =
+            document.querySelector(
+                'input[name="pago"]:checked'
+            ).value;
+
+
+        if (
+            pagoSeleccionado === "tarjeta"
+        ) {
+
+            const titular =
+                document.getElementById(
+                    "titular"
+                ).value.trim();
+
+
+            const tarjeta =
+                numeroTarjeta.value.replace(
+                    /\s/g,
+                    ""
+                );
+
+
+            const venc =
+                vencimiento.value.trim();
+
+
+            const cvv =
+                document.getElementById(
+                    "cvv"
+                ).value.trim();
+
+
+            if (
+                !titular ||
+                tarjeta.length !== 16 ||
+                venc.length !== 5 ||
+                cvv.length < 3
+            ) {
+
+                alert(
+                    "Completa correctamente los datos de la tarjeta."
+                );
+
+                return;
+
+            }
+
+        }
+            const carrito = JSON.parse(
+                localStorage.getItem("sportcustom_carrito")
+            ) || [];
+
+            fetch("../../backend/pedidos.php", {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },  
+
+                credentials: "same-origin",
+
+                body: JSON.stringify({
+
+                    subtotal: subtotal,
+
+                    envio: parseFloat(
+                      document.querySelector(
+                            'input[name="envio"]:checked'
+                        ).value
+                    ),
+
+                    productos: carrito.map(producto => ({
+                     producto_id: producto.id,
+                     cantidad: producto.cantidad,
+                     precio: parseFloat(producto.precio)
+                }))
+
+             })
+            })
+
+        .then(response => response.json())
+        .then(data => {
+
+            if (data.success) {
+
+                //vaciar el carrito
+                localStorage.removeItem("sportcustom_carrito");
+
+                //actualizar contador de carrito si existe
+                const cartCount= document.getElementById("cart-count");
+
+                if (cartCount){
+                    cartCount.textContent = "0";
+                }
+
+                alert(
+                    "¡Pedido registrado correctamente!\n\n" +
+                    "Pedido #" + data.pedido_id + "\n" +
+                    "Descuento: " + data.descuento_porcentaje + "%\n" +
+                    "Descuento aplicado: $" + data.descuento + "\n" +
+                    "Total final: $" + data.total
+                );
+
+                // Ir a Mis Pedidos
+             window.location.href = "../usuario/pedidos.html";
+
+            } 
+            
+            else {
+
+                alert(data.message);
+
+            }
+
+        })
+        .catch(error => {
+
+             console.error("Error:", error);
+
+            alert("No se pudo conectar con el servidor.");
+
+        }); 
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

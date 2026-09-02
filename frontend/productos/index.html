@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Colección Mayorista | SPORTCUSTOM</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- CSS general -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- CSS específico de productos -->
+    <link rel="stylesheet" href="productos.css">
+
+
+    <style>
+        .products-mysql-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .product-loading {
+            width: 100%;
+            padding: 40px 20px;
+            border: 1px solid #12314b;
+            border-radius: 18px;
+            color: #8fb0d0;
+            text-align: center;
+            font-weight: 700;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+
+<header class="sc-navbar">
+
+    <div class="sc-nav-container">
+
+
+        <!-- LOGO -->
+
+        <a href="../index.html" class="sc-logo">
+
+            <span class="sc-logo-icon">
+                S
+            </span>
+
+            <span class="sc-logo-text">
+
+                <strong>
+                    SPORTCUSTOM
+                </strong>
+
+                <small>
+                    REMARKABLE UNIFORMS
+                </small>
+
+            </span>
+
+        </a>
+
+
+        <!-- MENU -->
+
+        <nav class="sc-menu">
+
+            <a href="../index.html">
+                INICIO
+            </a>
+
+            <a href="index.html"
+               class="active">
+                COLECCIÓN / MAYORISTA
+            </a>
+
+            <a href="../personalizador/index.html">
+                PERSONALIZAR
+            </a>
+
+            <a href="../index.html#contacto">
+                CONTACTO
+            </a>
+
+        </nav>
+
+
+        <!-- ACCIONES -->
+
+        <div class="sc-actions">
+
+            <button
+                class="sc-theme"
+                type="button"
+                title="Cambiar tema">
+
+                <i class="bi bi-sun"></i>
+
+            </button>
+
+
+            <a
+                href="../personalizador/index.html"
+                class="sc-design-button">
+
+                <i class="bi bi-stars"></i>
+
+                DISEÑAR AHORA
+
+            </a>
+
+
+            <a
+                href="../carrito/index.html"
+                class="sc-cart-button">
+
+                <i class="bi bi-bag"></i>
+
+                <span id="cart-count">
+                    0
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+
+<main>
+
+
+    <!-- HERO MAYORISTA -->
+
+    <section class="wholesale-hero">
+
+        <div class="container">
+
+            <div class="hero-badge">
+
+                🏆 WHOLESALE SOLUTIONS & CLUB DEALS
+
+            </div>
+
+
+            <h1>
+
+                PROFESSIONAL TEAMS
+
+                <span>
+                    & WHOLESALE HUB
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Uniformes memorables, rendimiento insuperable.
+                Destaca del resto de la competencia con indumentaria
+                profesional fabricada exclusivamente a la medida
+                de tu club con descuentos por lote coordinado.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+  
+    <section class="collection-section">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        INSPIRACIONES EXCLUSIVAS
+                    </span>
+
+                    <p>
+                        Diseños base para inspirarte a crear
+                        el uniforme de tu comunidad.
+                    </p>
+
+                </div>
+
+                <small>
+                    DESLIZA O USA LAS FLECHAS PARA EXPLORAR
+                </small>
+
+            </div>
+
+
+
+            <!-- TARJETAS DE INSPIRACIÓN -->
+
+            <div class="inspiration-grid">
+
+
+                <div class="inspiration-card">
+
+                    <div class="uniform-preview soccer">
+
+                        <span>
+                            SOCCER
+                        </span>
+
+                        <strong>
+                            ⚽
+                        </strong>
+
+                        <b>
+                            BARCELONA RETRO
+                        </b>
+
+                    </div>
+
+                    <h3>
+                        BARCELONA RETRO
+                    </h3>
+
+                    <small>
+                        Custom Pro Kit
+                    </small>
+
+                </div>
+
+
+
+                <div class="inspiration-card">
+
+                    <div class="uniform-preview sky">
+
+                        <span>
+                            SOCCER
+                        </span>
+
+                        <strong>
+                            ⚽
+                        </strong>
+
+                        <b>
+                            CITIZENS
+                        </b>
+
+                    </div>
+
+                    <h3>
+                        MANCHESTER SKY
+                    </h3>
+
+                    <small>
+                        Custom Pro Kit
+                    </small>
+
+                </div>
+
+
+
+                <div class="inspiration-card">
+
+                    <div class="uniform-preview gold">
+
+                        <span>
+                            BASKETBALL
+                        </span>
+
+                        <strong>
+                            🏆
+                        </strong>
+
+                        <b>
+                            BAY AREA
+                        </b>
+
+                    </div>
+
+                    <h3>
+                        GOLDEN AURA
+                    </h3>
+
+                    <small>
+                        Custom Pro Kit
+                    </small>
+
+                </div>
+
+
+
+                <div class="inspiration-card">
+
+                    <div class="uniform-preview green">
+
+                        <span>
+                            BASKETBALL
+                        </span>
+
+                        <strong>
+                            🏆
+                        </strong>
+
+                        <b>
+                            SHAMROCK
+                        </b>
+
+                    </div>
+
+                    <h3>
+                        BOSTON CELTICS
+                    </h3>
+
+                    <small>
+                        Custom Pro Kit
+                    </small>
+
+                </div>
+
+
+
+                <div class="inspiration-card">
+
+                    <div class="uniform-preview stripe">
+
+                        <span>
+                            BASEBALL
+                        </span>
+
+                        <strong>
+                            ⚾
+                        </strong>
+
+                        <b>
+                            PINSTRIPE
+                        </b>
+
+                    </div>
+
+                    <h3>
+                        YANKEES STRIPE
+                    </h3>
+
+                    <small>
+                        Custom Pro Kit
+                    </small>
+
+                </div>
+
+
+
+                <div class="inspiration-card">
+
+                    <div class="uniform-preview red">
+
+                        <span>
+                            SOCCER
+                        </span>
+
+                        <strong>
+                            ⚽
+                        </strong>
+
+                        <b>
+                            ANFIELD
+                        </b>
+
+                    </div>
+
+                    <h3>
+                        REDS LEGENDARY
+                    </h3>
+
+                    <small>
+                        Custom Pro Kit
+                    </small>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PAQUETES
+    ================================================== -->
+
+    <section class="packages-section">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        SOLUCIONES INTEGRALES
+                    </span>
+
+                    <h2>
+                        PAQUETES SUGERIDOS POR DISCIPLINA
+                    </h2>
+
+                </div>
+
+                <small>
+                    UNIDADES AJUSTABLES
+                </small>
+
+            </div>
+
+
+
+            <!-- PRODUCTOS CARGADOS DESDE MYSQL -->
+            <div id="productos-mysql" class="products-mysql-grid">
+                <div class="product-loading">Cargando productos...</div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         DESCUENTOS
+    ================================================== -->
+
+    <section class="discount-section">
+
+        <div class="container">
+
+            <div class="discount-box">
+
+                <span>
+                    DESCUENTOS POR VOLUMEN
+                </span>
+
+                <h2>
+                    MÁS KITS = MEJOR PRECIO
+                </h2>
+
+                <p>
+                    Compra por lote y obtén mejores precios
+                    para tu club o equipo.
+                </p>
+
+
+                <div class="discount-grid">
+
+                    <div>
+                        <strong>
+                            10+
+                        </strong>
+
+                        <span>
+                            kits
+                        </span>
+
+                        <small>
+                            Precio normal
+                        </small>
+                    </div>
+
+
+                    <div>
+                        <strong>
+                            30+
+                        </strong>
+
+                        <span>
+                            kits
+                        </span>
+
+                        <small>
+                            15% descuento
+                        </small>
+                    </div>
+
+
+                    <div>
+                        <strong>
+                            50+
+                        </strong>
+
+                        <span>
+                            kits
+                        </span>
+
+                        <small>
+                            20% descuento
+                        </small>
+                    </div>
+
+
+                    <div>
+                        <strong>
+                            100+
+                        </strong>
+
+                        <span>
+                            kits
+                        </span>
+
+                        <small>
+                            25% descuento
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+
+
+<footer class="sc-footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <div class="footer-logo">
+
+                    <span>
+                        S
+                    </span>
+
+                    <strong>
+                        SPORTCUSTOM
+                    </strong>
+
+                </div>
+
+                <p>
+                    Diseñamos indumentaria deportiva
+                    extraordinaria para equipos que
+                    rechazan pasar desapercibidos y
+                    eligen el protagonismo absoluto.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    MENÚ
+                </h4>
+
+                <a href="../index.html">
+                    › Inicio
+                </a>
+
+                <a href="index.html">
+                    › Catálogo Mayorista
+                </a>
+
+                <a href="../personalizador/index.html">
+                    › Diseñador
+                </a>
+
+                <a href="../index.html#contacto">
+                    › Contacto
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    SOPORTE
+                </h4>
+
+                <a href="../index.html">
+                    › Centro de Ayuda
+                </a>
+
+                <a href="../index.html">
+                    › Guía de Tallas
+                </a>
+
+                <a href="../index.html">
+                    › Logística y Envíos
+                </a>
+
+                <a href="../index.html">
+                    › Preguntas Frecuentes
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    BOLETÍN REMARKABLE
+                </h4>
+
+                <p>
+                    Únete para recibir guías exclusivas
+                    de marketing de equipos deportivos
+                    y nuevos lanzamientos.
+                </p>
+
+                <div class="newsletter">
+
+                    <input
+                        type="email"
+                        placeholder="Ingresa tu correo">
+
+                    <button>
+                        Enviar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 SPORTCUSTOM Corporation.
+            Todos los derechos reservados.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- JavaScript de productos existente -->
+<script src="productos.js"></script>
+
+<!-- Productos dinámicos desde MySQL -->
+<script>
+document.addEventListener("DOMContentLoaded", async function () {
+
+    const contenedor = document.getElementById("productos-mysql");
+    const cartCount = document.getElementById("cart-count");
+
+    if (!contenedor) return;
+
+    function escapar(texto) {
+        const div = document.createElement("div");
+        div.textContent = texto ?? "";
+        return div.innerHTML;
+    }
+
+    function iconoCategoria(categoria) {
+        const cat = (categoria || "").toLowerCase();
+        if (cat.includes("basket")) return "🏀";
+        if (cat.includes("baseball") || cat.includes("béisbol")) return "⚾";
+        if (cat.includes("voleibol")) return "🏐";
+        return "⚽";
+    }
+
+    function claseProducto(categoria) {
+        const cat = (categoria || "").toLowerCase();
+        if (cat.includes("basket")) return "basketball-product";
+        if (cat.includes("baseball") || cat.includes("béisbol")) return "baseball-product";
+        return "soccer-product";
+    }
+
+    function actualizarContador() {
+        const carrito = JSON.parse(localStorage.getItem("sportcustom_carrito")) || [];
+        const cantidad = carrito.reduce(
+            (total, producto) => total + (parseInt(producto.cantidad) || 0),
+            0
+        );
+        if (cartCount) cartCount.textContent = cantidad;
+    }
+
+    function agregarAlCarrito(producto, cantidad) {
+        const carrito = JSON.parse(localStorage.getItem("sportcustom_carrito")) || [];
+        const existente = carrito.find(
+            item => String(item.id) === String(producto.id)
+        );
+
+        if (existente) {
+            existente.cantidad = (parseInt(existente.cantidad) || 0) + cantidad;
+        } else {
+            carrito.push({
+                id: producto.id,
+                nombre: producto.nombre,
+                descripcion: producto.descripcion || "",
+                precio: parseFloat(producto.precio) || 0,
+                imagen: producto.imagen || "",
+                categoria: producto.categoria || "",
+                cantidad: cantidad
+            });
+        }
+
+        localStorage.setItem(
+            "sportcustom_carrito",
+            JSON.stringify(carrito)
+        );
+
+        actualizarContador();
+        alert("Producto agregado al carrito.");
+    }
+
+    function renderizarProductos(productos) {
+
+        if (!productos.length) {
+            contenedor.innerHTML = `
+                <div class="product-loading">
+                    No hay productos disponibles en este momento.
+                </div>`;
+            return;
+        }
+
+        contenedor.innerHTML = productos.map(producto => {
+
+            const precio = parseFloat(producto.precio) || 0;
+            const stock = parseInt(producto.stock) || 0;
+            const disponible = stock > 0;
+            const nombre = escapar(producto.nombre);
+            const descripcion = escapar(producto.descripcion);
+            const categoria = escapar(producto.categoria || "Deportivo");
+            const clase = claseProducto(producto.categoria);
+            const icono = iconoCategoria(producto.categoria);
+
+            return `
+                <article
+                    class="product-card"
+                    data-id="${producto.id}"
+                    data-stock="${stock}"
+                    data-price="${precio}">
+
+                    <div class="product-image ${clase}">
+                        <span>Ref #${producto.id}</span>
+                        <div class="shirt-art">${icono}</div>
+                    </div>
+
+                    <div class="product-information">
+
+                        <div class="product-tags">
+                            <span class="tag-green">${categoria}</span>
+                            <span>100% PERSONALIZADO</span>
+                        </div>
+
+                        <h3>${nombre}</h3>
+
+                        <p>${descripcion}</p>
+
+                        <ul>
+                            <li>Diseño deportivo personalizado</li>
+                            <li>Fabricación para equipos</li>
+                            <li>Material deportivo de calidad</li>
+                            <li>Opciones para pedidos por lote</li>
+                        </ul>
+
+                        <div class="stock-info">
+                            <span>
+                                🟢 Stock:
+                                <strong class="stock-number">${stock}</strong>
+                                unidades
+                            </span>
+                            <span>Compra mínima: 1 kit</span>
+                        </div>
+
+                    </div>
+
+                    <div class="product-buy">
+
+                        <div class="price">
+                            <strong>$${precio.toFixed(2)}</strong>
+                            <small>/ kit</small>
+                        </div>
+
+                        <div class="quantity-control">
+                            <button class="quantity-minus" type="button">−</button>
+                            <input
+                                type="number"
+                                class="quantity-input"
+                                value="1"
+                                min="1"
+                                max="${Math.max(stock, 1)}">
+                            <button class="quantity-plus" type="button">+</button>
+                        </div>
+
+                        <div class="product-total">
+                            Total:
+                            <strong>$${precio.toFixed(2)}</strong>
+                        </div>
+
+                        <button
+                            class="add-kit-button"
+                            type="button"
+                            ${disponible ? "" : "disabled"}>
+                            ${disponible ? "AÑADIR KIT" : "AGOTADO"}
+                            <i class="bi bi-cart-plus"></i>
+                        </button>
+
+                    </div>
+
+                </article>`;
+
+        }).join("");
+
+        contenedor.querySelectorAll(".product-card").forEach(card => {
+
+            const producto = productos.find(
+                item => String(item.id) === String(card.dataset.id)
+            );
+
+            const input = card.querySelector(".quantity-input");
+            const total = card.querySelector(".product-total strong");
+            const precio = parseFloat(producto.precio) || 0;
+            const stock = parseInt(producto.stock) || 0;
+
+            function actualizarTotal() {
+                let cantidad = parseInt(input.value) || 1;
+                cantidad = Math.max(1, Math.min(cantidad, stock || 1));
+                input.value = cantidad;
+                total.textContent = "$" + (precio * cantidad).toFixed(2);
+            }
+
+            card.querySelector(".quantity-minus").addEventListener("click", function () {
+                input.value = Math.max(
+                    1,
+                    (parseInt(input.value) || 1) - 1
+                );
+                actualizarTotal();
+            });
+
+            card.querySelector(".quantity-plus").addEventListener("click", function () {
+                input.value = Math.min(
+                    stock || 1,
+                    (parseInt(input.value) || 1) + 1
+                );
+                actualizarTotal();
+            });
+
+            input.addEventListener("input", actualizarTotal);
+
+            card.querySelector(".add-kit-button").addEventListener("click", function () {
+                const cantidad = parseInt(input.value) || 1;
+                agregarAlCarrito(producto, cantidad);
+            });
+        });
+    }
+
+    try {
+
+        const respuesta = await fetch("../../backend/productos.php", {
+            method: "GET",
+            credentials: "same-origin"
+        });
+
+        if (!respuesta.ok) {
+            throw new Error("HTTP " + respuesta.status);
+        }
+
+        const data = await respuesta.json();
+
+        if (!data.success) {
+            throw new Error(
+                data.message || "No se pudieron cargar los productos."
+            );
+        }
+
+        renderizarProductos(data.productos || []);
+        actualizarContador();
+
+    } catch (error) {
+
+        console.error("Error cargando productos:", error);
+
+        contenedor.innerHTML = `
+            <div class="product-loading">
+                No se pudieron cargar los productos. Intenta nuevamente.
+            </div>`;
+    }
+});
+</script>
+
+</body>
+
+</html>

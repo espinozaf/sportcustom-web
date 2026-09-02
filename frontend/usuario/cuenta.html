@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Mi cuenta | SPORTCUSTOM</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+    <style>
+
+        .account-page {
+
+            min-height: 100vh;
+
+            padding: 100px 20px 70px;
+
+            background:
+                radial-gradient(
+                    circle at 70% 20%,
+                    rgba(0,217,255,.07),
+                    transparent 30%
+                );
+        }
+
+        .account-box {
+
+            width: 100%;
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 40px;
+
+            border: 1px solid #1a3047;
+
+            border-radius: 20px;
+
+            background: #070f1a;
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,.25);
+        }
+
+        .account-kicker {
+
+            color: #a3e635;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+        }
+
+        .account-box h1 {
+
+            margin: 10px 0;
+
+            color: white;
+
+            font-size: 40px;
+
+            font-weight: 900;
+        }
+
+        .account-box h1 span {
+
+            color: #a3e635;
+        }
+
+        .account-description {
+
+            color: #718daa;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+        .account-info {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+
+            margin-bottom: 30px;
+        }
+
+        .account-item {
+
+            padding: 20px;
+
+            border: 1px solid #1b344d;
+
+            border-radius: 12px;
+
+            background: #091522;
+        }
+
+        .account-item small {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #7894af;
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 9px;
+
+            font-weight: 700;
+        }
+
+        .account-item strong {
+
+            color: white;
+
+            font-size: 15px;
+        }
+
+        .account-actions {
+
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .account-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            min-height: 48px;
+
+            padding: 0 22px;
+
+            border-radius: 9px;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            font-weight: 900;
+        }
+
+        .account-button.primary {
+
+            background:
+                linear-gradient(
+                    100deg,
+                    #a3e635,
+                    #00c68c
+                );
+
+            color: #06100b;
+        }
+
+        .account-button.secondary {
+
+            border: 1px solid #17445a;
+
+            background: #091522;
+
+            color: #00d9ff;
+        }
+
+        .account-button.logout {
+
+            border: 1px solid #6b2637;
+
+            background: #1b1017;
+
+            color: #ff6b81;
+
+        }
+
+        @media (max-width: 600px) {
+
+            .account-box {
+
+                padding: 25px;
+
+            }
+
+            .account-box h1 {
+
+                font-size: 30px;
+
+            }
+
+            .account-info {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .account-actions {
+
+                flex-direction: column;
+
+            }
+
+            .account-button {
+
+                width: 100%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="main-header">
+
+    <nav class="navbar navbar-expand-lg">
+
+        <div class="container">
+
+            <a
+                href="../index.html"
+                class="brand">
+
+                <div class="brand-symbol">
+                    S
+                </div>
+
+                <div class="brand-text">
+
+                    <strong>
+                        SPORT<span>CUSTOM</span>
+                    </strong>
+
+                    <small>
+                        REMARKABLE UNIFORMS
+                    </small>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+<section class="account-page">
+
+    <div class="account-box">
+
+        <div class="account-kicker">
+            REMARKABLE ACCOUNT
+        </div>
+
+
+        <h1>
+            MI <span>CUENTA.</span>
+        </h1>
+
+
+        <p class="account-description">
+
+            Bienvenido a tu espacio personal de SPORTCUSTOM.
+            Desde aquí podrás administrar tus datos,
+            consultar tus pedidos y acceder a tus diseños.
+
+        </p>
+
+
+        <div class="account-info">
+
+
+            <div class="account-item">
+
+                <small>
+                    NOMBRE
+                </small>
+
+                <strong id="nombreUsuario">
+                    Cargando...
+                </strong>
+
+            </div>
+
+
+            <div class="account-item">
+
+                <small>
+                    CORREO ELECTRÓNICO
+                </small>
+
+                <strong id="correoUsuario">
+                    Cargando...
+                </strong>
+
+            </div>
+
+            <div class="account-item">
+                <small>
+                    TELÉFONO
+                </small>
+                <strong id="telefonoUsuario">
+                     Cargando...
+                </strong>
+            </div>
+
+            
+            <div class="account-item">
+                <small>
+                  DIRECCIÓN
+                </small>
+                <strong id="direccionUsuario">
+                    Cargando...
+                </strong>
+            </div>
+
+            <div class="account-item">
+               <small>
+                 TELÉFONO
+                </small>
+                 <strong id="telefonoUsuario">
+                    Cargando...
+                </strong>
+            </div>
+
+            <div class="account-item">
+                 <small>
+                     DIRECCIÓN
+                </small>
+               <strong id="direccionUsuario">
+                 Cargando...
+                </strong>
+            </div>
+
+
+            <div class="account-item">
+
+                <small>
+                    ESTADO DE CUENTA
+                </small>
+
+                <strong>
+                    CUENTA ACTIVA
+                </strong>
+
+            </div>
+
+
+            <div class="account-item">
+
+                <small>
+                    BENEFICIO
+                </small>
+
+                <strong>
+                    DESCUENTO DE BIENVENIDA
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="account-actions">
+
+
+            <a
+                href="../index.html"
+                class="account-button primary">
+
+                <i class="bi bi-house"></i>
+
+                VOLVER AL INICIO
+
+            </a>
+
+
+            <a
+                href="../carrito/index.html"
+                class="account-button primary">
+
+                <i class="bi bi-bag"></i>
+
+                VER MI CARRITO
+
+            </a>
+           
+            <a 
+                href="pedidos.html"
+                 class="account-button primary">
+                
+                <i class="bi bi-receipt"></i>
+                
+                MIS PEDIDOS
+            </a>
+
+
+            <a
+                href="../../backend/cerrar_sesion.php"
+                class="account-button logout">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                CERRAR SESIÓN
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        fetch("../../backend/usuario.php", {
+
+            method: "GET",
+
+            credentials: "same-origin",
+
+            cache: "no-store"
+
+        })
+
+        .then(function(response) {
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Error HTTP: " +
+                    response.status
+                );
+
+            }
+
+            return response.json();
+
+        })
+
+        .then(function(data) {
+
+            if (data.sesion !== true) {
+
+                window.location.href =
+                    "login.html";
+
+                return;
+
+            }
+
+
+            document.getElementById(
+                "nombreUsuario"
+            ).textContent =
+                data.nombre;
+
+
+            document.getElementById(
+                "correoUsuario"
+            ).textContent =
+              data.correo;
+            
+            document.getElementById(
+                "telefonoUsuario"
+            ).textContent =
+                data.telefono || "No registrado";
+
+
+            document.getElementById(
+                "direccionUsuario"
+            ).textContent =
+                data.direccion || "No registrada";   
+
+
+        })
+
+        .catch(function(error) {
+
+            console.error(
+                "Error al cargar la cuenta:",
+                error
+            );
+
+        });
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
